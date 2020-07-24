@@ -14,7 +14,7 @@ html{
     clear: both;
 }
 
-img{
+.col1 img{
     height: auto;
     width: 120%;
     background-color: white;
@@ -57,7 +57,7 @@ img{
     margin-bottom: 40px;
 } 
 
-span{
+.col2 span{
     color:#00796B;
 }
 #name,
@@ -85,7 +85,7 @@ span{
     display: block;
 }
 
-.nav-link{
+.n-link{
     display: block;
     text-align: center;
     margin-top: 1%;

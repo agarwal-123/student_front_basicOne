@@ -1,13 +1,18 @@
 .main{
       font-family: 'Lato', 'Arial', sans-serif;
+      height: 100vh;
+      width: 100%;
 }
+
+/****** Header ********/
+
 .header{
-      top: 0px;
-      position: fixed;
       width:98%;
+      height: 5%;
       background-color: rgb(255, 255, 255);
       padding: 1%;
       border-bottom: 1px solid rgb(233, 233, 233);
+      font-size: 80%;
 }
 
 .clearfix::after {
@@ -30,40 +35,54 @@
       float: left;
 }
 
-.sidebar{
-      position: fixed;
-      left: 0px;
-      top:64px;
-      background-color: white;
-      width: 5%;
-      height: 89vh;
-      border-right:  1px solid rgb(233, 233, 233);
+
+.container{
+      height: 89%;
+      width: 100%;
 }
 
-.nav-link{
+.sidebar{
+      background-color: white;
+      width: 5%;
+      height: 100%;
+      border-right:  1px solid rgb(233, 233, 233);
+      float: left;
+}
+
+.side-container{
+      width: 94.8%;
+      height: 100%;
+      float: left;
+      overflow: hidden;
+}
+
+.sidebar .nav-link{
       margin-bottom: 20px;
       display: block;
       text-decoration: none;
       text-align: center;
       font-size: 200%;
+      /* color: black; */
 }
 
 .comp{
-      height: 100px;
-      width:94%;
+      height: 100%;
+      width:100%;
+      /* overflow-y: scroll; */
+      overflow-x: hidden;
 }
 .comp h1{
       font-weight: 500;
       margin-top: 1%;
-      margin-left: 7%;
+      margin-left: 3%;
 }
 
-img{
+.header-img{
       border-top-left-radius: 30px;
       border-bottom-left-radius: 30px;
       width:98%;
-      margin-left: 7%;
-      margin-top:7%;
+      margin-left: 1%;
+      margin-top:1%;
       height: 50vh;
 }
 
@@ -72,21 +91,22 @@ img{
       margin-left: 10%;
 }
 
-.row{
+.row1{
       margin-top: 3%;
-      margin-left: 10%;
-      width:1140px;
-      height: 30vh;
+      margin-left: 3%;
+      width:100%;
+      height: 30%;
       overflow: hidden;
 }
-.col{
+.col3{
       float: left;
+      margin-top: 1%;
       margin-right: 5%;
 }
 .subject{
       background-color: khaki;
       width: 20%;
-      height:45% ;
+      height:50% ;
       border-bottom-left-radius: 10px;
       border-top-left-radius: 10px;
       text-align: center;
@@ -94,7 +114,12 @@ img{
 
 .subject h3{
       margin-top: 13%;
+      margin-bottom: 13%;
       color: white;
+}
+
+.subject .link{
+      text-decoration: none;
 }
 
 #sub0{
@@ -113,32 +138,77 @@ img{
       background-color:#22a6b3;
 }
 
-.row1{
-      margin-top: 0%;
-      margin-left: 5.4%;
-      width: 1199px;
-      height: 60vh;
+.row2{
+      width: 100%;
+      height: 67%;
       overflow: hidden;
       background-color: #f2f4f8;
+      position: relative;
 }
 
 .chapters{
-      width:50000px;
-      height: 100%;
-      margin-left: 4.5%;
       margin-top: 5%;
-      margin-bottom: 5%;
+      margin-left: 5%;
+      width: 4200%;
+      /* width:50000px; */
+      height: 70%;
+      transition: all 1.5s;
 }
 
-.col1{
-      overflow: hidden;
+.col4{
       float: left;
       margin-right: 0.1%;
 }
 
 .chapter{
-      height: 70%;
+      height: 95%;
       width:0.6%;
-      /* margin-left: 1%; */
       background-color: white;
+      border-radius:5%;
+      text-align: center;
+}
+
+.chapter img{
+      width:80%;
+      height: 50%;
+      margin-top: 10%;
+}
+
+.chapter h3{
+      font-size: 100%;
+      font-weight: 700;
+      margin-top: 2%;
+}
+
+.newrow h4{
+      font-weight: 500;
+      font-size: 80%;
+      float: left;
+      margin-left: 14%;
+      margin-top: 6%;
+}
+
+.first-button{
+      position: absolute;
+      border: none;
+      margin-top:-13%;
+      margin-left:1%;
+      cursor: pointer;
+}
+
+.second-button{
+      position: absolute;
+      border: none;
+      margin-top:-13%;
+      margin-left:95%;
+      cursor: pointer;
+}
+
+.first-button img{
+      height: 10%;
+      width: 50px;
+}
+.second-button img{
+      height: 10%;
+      width: 50px;
 }
