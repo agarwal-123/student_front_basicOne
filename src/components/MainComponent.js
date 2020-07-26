@@ -2,6 +2,8 @@ import React , { Component, useState } from 'react';
 import { Switch, Route, Redirect, NavLink, Link} from 'react-router-dom';
 import './Main.css'
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
+import Chapter from './ChapterComponent';
+import Videoplayer from './VideoplayerComponent';
 
 function Navbar(){
       return (
@@ -29,7 +31,7 @@ function Subject(){
 
       const subjects=SUBJECTS.map((subject)=>{
             return(
-                  <Link className="link" to={`/subject/${subject.subid}`}>
+                  <Link className="link" to={`/subject/${subject.name}`}>
                         <div className="subject col3" id={subject.id} key={subject.id}>
                               <h3>{subject.name}</h3>
                         </div>
@@ -92,14 +94,7 @@ function Subject(){
       );
 }
 
-function Chapter({subid}){
-      console.log("hello 2",subid);
-      return(
-            <div className="comp">
-                  <h1 style={{'font-size':'300px',marginLeft:'100px',marginTop:'100px'}}>{subid}</h1>
-            </div>
-      );
-}
+
 
 function Test(){
       return(
@@ -119,7 +114,14 @@ class Main extends Component{
             const selectchapter=({match})=>{
                   console.log("hello 1");
                   return(
-                        <Chapter subid={match.params.subid}/>
+                        <Chapter subname={match.params.subname}/>
+                  );
+            }
+
+            const selecttopic=({match})=>{
+                  console.log(match.params.topic,match.params.chapter);
+                  return (
+                        <Videoplayer topic={match.params.topic} chapter={match.params.chapter}/>
                   );
             }
 
@@ -131,7 +133,8 @@ class Main extends Component{
                               <div className="side-container">
                                     <Switch>
                                           <Route exact path='/subject' component={()=><Subject/>} />
-                                          <Route path='/subject/:subid' component={selectchapter} />
+                                          <Route path='/subject/:subname' component={selectchapter} />
+                                          <Route path='/chapter/:chapter/:topic' component={selecttopic} />
                                           <Route path='/test' component={()=><Test/>}/>
                                           <Redirect to="/subject"/>
                                     </Switch>

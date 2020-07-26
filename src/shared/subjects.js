@@ -102,3 +102,7 @@ export const PHYSICS=
             
 ];
 
+export const allsubject=
+[
+      
+];
