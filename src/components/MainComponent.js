@@ -4,6 +4,14 @@ import './Main.css'
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
 import Chapter from './ChapterComponent';
 import Videoplayer from './VideoplayerComponent';
+import Chat from './ChatComponent';
+import Profile from './ProfileComponent';
+
+import home from './SVG/home3.svg';
+import books from './SVG/books.svg';
+import users from './SVG/users.svg';
+import note from './SVG/bell.svg';
+import contact from './SVG/address-book.svg';
 
 function Navbar(){
       return (
@@ -19,10 +27,10 @@ function Navbar(){
 function Sidebar(){
       return (
             <div className="sidebar">
-                  <NavLink className="nav-link"  to='/subject'>S</NavLink>
-                  <NavLink className="nav-link"  to='/test'>T</NavLink>
-                  <NavLink className="nav-link"  to='/subject'>P</NavLink>
-                  <NavLink className="nav-link"  to='/subject'>B</NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/subject'><img src = {books} /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/test'> <img src = {note} /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/chat'><img src = {home} /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/profile'><img src = {users} /></NavLink>
             </div>
       );
 }
@@ -32,7 +40,7 @@ function Subject(){
       const subjects=SUBJECTS.map((subject)=>{
             return(
                   <Link className="link" to={`/subject/${subject.name}`}>
-                        <div className="subject col3" id={subject.id} key={subject.id}>
+                        <div className="subject main-col3" id={subject.id} key={subject.id}>
                               <h3>{subject.name}</h3>
                         </div>
                   </Link>
@@ -43,7 +51,7 @@ function Subject(){
             if(chapter.name.length>25)
                   chapter.name=chapter.name.substring(0,22)+"...";
             return(
-                  <div className="chapter col4">
+                  <div className="chapter main-col4">
                         <img src="./assets/book3.jpg"></img>
                         <h3>{chapter.name}</h3> 
                         <div className="newrow clearfix">
@@ -128,7 +136,7 @@ class Main extends Component{
             return(
                   <div className="main">
                         <Navbar/>
-                        <div className="container clearfix">
+                        <div className="main-container clearfix">
                               <Sidebar/>
                               <div className="side-container">
                                     <Switch>
@@ -136,6 +144,8 @@ class Main extends Component{
                                           <Route path='/subject/:subname' component={selectchapter} />
                                           <Route path='/chapter/:chapter/:topic' component={selecttopic} />
                                           <Route path='/test' component={()=><Test/>}/>
+                                          <Route path='/chat' component={()=><Chat/>}/>
+                                          <Route path='/Profile' component={()=><Profile/>}/>
                                           <Redirect to="/subject"/>
                                     </Switch>
                               </div> 

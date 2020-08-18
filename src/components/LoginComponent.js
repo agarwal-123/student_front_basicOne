@@ -160,12 +160,12 @@ class Login extends Component{
     render(){
         return(
             <div className="row clearfix">
-                <div className="col1">
+                <div className="login-col1">
                     <h1>Welcome to smplified</h1>
                     <h1>online learning</h1>
                     <img src="./assets/student2.jpg" alt="student"></img>
                 </div>
-                <div className="col2">
+                <div className="login-col2">
                     <h1><span>Quick</span> Study</h1>
                     <Switch>
                         <Route path='/signin' component={()=><SignIn input={this.input} changestate={this.props.changestate}/>} />

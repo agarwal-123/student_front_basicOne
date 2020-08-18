@@ -19,7 +19,9 @@
       background: #fff;
       width:35%;
       height: 35%;
-      margin:4%;
+      margin-left:9%;
+      margin-top:4%;
+      margin-bottom: 4%;
       float:left;
       padding: 20px !important;
       border-radius: 8px !important;
@@ -91,8 +93,10 @@
 .mat-card-s {
       background: #fff;
       width:84%;
-      height: 20%;
-      margin:3%;
+      height: 22%;
+      margin-left:3%;
+      margin-top: 7%;
+      margin-bottom: 5%;
       float:left;
       padding: 15px;
       border-radius: 8px !important;
