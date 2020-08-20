@@ -42,7 +42,7 @@
       width: 100%;
 }
 
-.sidebar{
+.m-sidebar{
       background-color: white;
       /* background-color: #c69963; */
       width: 5%;
@@ -80,7 +80,7 @@
       overflow: hidden;
 }
 
-.sidebar .nav-link{
+.m-sidebar .nav-link{
       margin-bottom: 20px;
       display: block;
       text-decoration: none;

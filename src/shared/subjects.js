@@ -3,22 +3,26 @@ export const SUBJECTS =
       {
             subid:0,
             id:   "sub0",
-            name: "Physics"
+            name: "Physics",
+            col:"#FFC107"
       },
       {
             subid:1,
             id:   "sub1",
-            name: "Biology"
+            name: "Biology",
+            col:"#6ab04c"
       },
       {
             subid:2,
             id:   "sub2",
-            name: "Mathematics"
+            name: "Mathematics",
+            col:"#eb4d4b"
       },
       {
             subid:3,
             id:   "sub3",
-            name: "Chemistry"
+            name: "Chemistry",
+            col:"#22a6b3"
       }
 ];
 

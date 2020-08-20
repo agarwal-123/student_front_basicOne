@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 // import Profile from "./components/ProfileComponent";
 import Multiplepage from "./components/MultiplepageComponent";
 
+
 function App() {
   return (
     <BrowserRouter>

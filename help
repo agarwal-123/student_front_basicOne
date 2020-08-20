@@ -9,3 +9,5 @@
 9. npm install @material-ui/core
 10. npm install @material-ui/icons
 11. npm install @mui-treasury/components
+12. yarn add react-cube-navigation react-gesture-responder react-spring
+13. yarn add react-3d-cube

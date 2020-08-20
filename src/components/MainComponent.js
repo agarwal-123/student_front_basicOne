@@ -6,6 +6,8 @@ import Chapter from './ChapterComponent';
 import Videoplayer from './VideoplayerComponent';
 import Chat from './ChatComponent';
 import Profile from './ProfileComponent';
+import Test from './TestComponent';
+import Testform from './Testform';
 
 import home from './SVG/home3.svg';
 import books from './SVG/books.svg';
@@ -26,7 +28,7 @@ function Navbar(){
 
 function Sidebar(){
       return (
-            <div className="sidebar">
+            <div className="m-sidebar">
                   <NavLink className="nav-link btt1 wrap"  to='/subject'><img src = {books} /></NavLink>
                   <NavLink className="nav-link btt1 wrap"  to='/test'> <img src = {note} /></NavLink>
                   <NavLink className="nav-link btt1 wrap"  to='/chat'><img src = {home} /></NavLink>
@@ -103,17 +105,6 @@ function Subject(){
 }
 
 
-
-function Test(){
-      return(
-            <div className="comp">
-                  <div className="test">
-                        <h1>Test</h1>
-                  </div>
-            </div>
-      );
-}
-
 class Main extends Component{
 
       
@@ -143,9 +134,10 @@ class Main extends Component{
                                           <Route exact path='/subject' component={()=><Subject/>} />
                                           <Route path='/subject/:subname' component={selectchapter} />
                                           <Route path='/chapter/:chapter/:topic' component={selecttopic} />
-                                          <Route path='/test' component={()=><Test/>}/>
+                                          <Route exact path='/test' component={()=><Test/>}/>
                                           <Route path='/chat' component={()=><Chat/>}/>
                                           <Route path='/Profile' component={()=><Profile/>}/>
+                                          <Route path='/test/:subname' component={()=><Testform/>}/>
                                           <Redirect to="/subject"/>
                                     </Switch>
                               </div> 

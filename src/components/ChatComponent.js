@@ -1,107 +1,197 @@
-import React, {Component} from 'react';
-import ChatMsg from '@mui-treasury/components/chatMsg/ChatMsg';
+import React, { Component } from 'react'
+import socketIOClient from 'socket.io-client'
+import { TextField } from '@material-ui/core'
+import ChatIcon from '@material-ui/icons/Chat'
+import Avatar from '@material-ui/core/Avatar'
+import Chip from '@material-ui/core/Chip'
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import FaceIcon from '@material-ui/icons/Face'
+import Chat from './Chat'
+import axios from 'axios'
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles'
+import SendIcon from '@material-ui/icons/Send'
 
-import './Chat.css';
+import './Chat.css'
 
-var messages=
-[     
-      {message:'Hi Jenny, How r u today?',side:"right"},
-      {message:'Did you train yesterday',side:"left"},
-      {message:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',side:"right"},
-      {message:'Hi Jenny, How r u today?',side:"right"},
-      {message:'Did you train yesterday',side:"left"},
-];
+const useStyles = makeStyles((theme) => ({
+      button: {
+      margin: theme.spacing(1),
+      },
+}));
 
-var cards=[];
-
-class Chat extends Component{
-
-      constructor(props){
-            super(props);
-            this.state = {
-              messages:messages,
-              cards:[]
-            };
-            this.addChat = this.addChat.bind(this);
-            this.addFile = this.addFile.bind(this);
-      }
-
-      componentWillMount(){
-            cards = this.state.messages.map((user, i) => {
-                  return (
-                        <ChatMsg avatar={''} messages={[user.message]} side={user.side}/>
-                  );
-            });
-            this.setState({cards: cards});
-            var scrollingElement = (document.scrollingElement || document.body);
-            scrollingElement.scrollTop = scrollingElement.scrollHeight;
-      }
-
-      addChat()
-      {
-            var m=document.getElementsByTagName("input")[0].value;
-            document.getElementsByTagName("input")[0].value="";
-            if(!m.length) 
-                  return 1;
-            messages.push({message:m,side:'right'})
-            this.setState({ messages: messages });
-            cards = this.state.messages.map((user, i) => {
-                  return (
-                        <ChatMsg avatar={''} messages={[user.message]} side={user.side}/>
-                  );
-            });
-            this.setState({cards: cards});
-            var scrollingElement = (document.scrollingElement || document.body);
-            scrollingElement.scrollTop = scrollingElement.scrollHeight;
-            console.log(m,this.state.messages);
-      }
-        
-        
-      addFile(e) {
-
-            e.preventDefault();
-            var m=document.getElementsByTagName("input")[1].files[0];
-            var myHeaders = new Headers();
-            myHeaders.append("authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjAxZjJkM2E3NTM4YzJkN2FlNDQ0ZWMiLCJpYXQiOjE1OTQwNjAwNjV9.9-D9sxfYjvrxzibd-_rfZ-XAVrrZF2IWNg8bnhVl5eg");
-            var formdata = new FormData();
-            formdata.append("subject", "Maths");
-            formdata.append("testFile", document.getElementsByTagName("input")[1].files[0],document.getElementsByTagName("input")[1].value);
-            
-            var requestOptions = {
-                  method: 'POST',
-                  headers: myHeaders,
-                  body: formdata,
-                  redirect: 'follow'
-            };
-            
-            fetch("https://education4all.herokuapp.com/addChat", requestOptions)
-            .then(response => response.json())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-            
-            messages.push({message:"File Sent Successfully !!",side:'right'})
-            this.setState({ messages: messages });
-            cards = this.state.messages.map((user, i) => {
-                  return (
-                  <ChatMsg avatar={''} messages={[user.message]} side={user.side}/>
-                  );
-            });
-            this.setState({cards: cards});
-            console.log(m,messages);
-      }
-
-      render(){
-            return(
-                  <div className="chat-container">
-                  <div>{this.state.cards}</div>
-                  <input style={{'display': 'inline-block'}}/>
-                  <button type="submit" onClick={this.addChat} value="Send" style={{  'border': 'none',  'color': 'white',  'padding': '15px 32px',  'text-align': 'center',  'text-decoration': 'none',  'display': 'inline-block',  'font-size': '16px',  'margin': '4px 2px',  'cursor': 'pointer','background-color': '#4CAF50','width':'30%','text-align':'center','margin-bottom':'50px'}}>Send</button>                  
-                  <input type="file" id="myFile" name="filename"/>
-                  <button onClick={this.addFile} style={{  'border': 'none',  'color': 'white',  'padding': '15px 32px',  'text-align': 'center',  'text-decoration': 'none',  'display': 'inline-block',  'font-size': '16px',  'margin': '4px 2px',  'cursor': 'pointer','background-color': '#4CAF50','width':'30%','text-align':'center','margin-bottom':'50px'}}>Send File</button>
-                  </div>
-            );
-      }
-
+const headers = {
+      host: 'localhost:3000',
+      connection: 'keep-alive',
+      accept: 'application/json, text/plain, */*',
+      'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+      origin: 'http://localhost:3001',
+      'sec-fetch-site': 'same-site',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      referer: 'http://localhost:3001/',
+      'accept-encoding': 'gzip, deflate, br',
+      'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8'
 }
 
-export default Chat;
+
+
+function SendButton(props) {
+      const classes = useStyles();
+      return (
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            endIcon={<SendIcon />}
+            onClick={props.handleSend}
+          >
+            Send
+          </Button>
+      );
+}
+  
+const socket = socketIOClient('http://localhost:3000/')
+
+class Client extends Component {
+      constructor(props) {
+            super(props)
+            this.textInput = React.createRef();
+            this.state = {
+                  text: '',
+                  allMessages: [],
+                  roomId: props.Room,
+                  activeUsers: []
+            }
+            // if(window.performance) {
+            //     if(performance.navigation.type == 1) {
+            //         socket.emit('leave', {roomId: this.state.roomId})
+            //     }
+            // }
+            this.handleSend = this.handleSend.bind(this)
+            this.handleChange = this.handleChange.bind(this)
+            this.scrollToBottom = this.scrollToBottom.bind(this)
+      }
+    
+      scrollToBottom = () => {
+            this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+      }
+      
+      componentDidUpdate() {
+            this.scrollToBottom()
+      }
+    
+      async componentDidMount() {
+            socket.on('connect', async () => {
+                  socket.emit('join', {
+                  roomId: this.state.roomId,
+                  username: localStorage.username
+                  })
+                  const res = await axios.get(`http://localhost:3000/mychat/${this.state.roomId}`, headers)
+                  if(!res.data)
+                  return
+                  console.log(res.data.Messages)
+                  this.setState({
+                  allMessages: res.data.Messages
+                  }, () => {
+                  console.log(this.state.allMessages)
+                  })
+                  this.scrollToBottom()
+            })
+            socket.on('newMessage', (message) => {
+                  const updatedMessages = [...this.state.allMessages, message]
+                  this.setState({
+                  allMessages: updatedMessages
+                  })
+            })
+            socket.on('updateActive', async () => {
+                  console.log('hello chk')
+                  const res = await axios.get(`http://localhost:3000/mychat/${this.state.roomId}`, headers)
+                  const activeUsersUpdated = res.data.People
+                  this.setState({
+                  activeUsers: activeUsersUpdated
+                  })
+            })
+      }
+
+      handleChange(event) {
+            const {name, value} = event.target
+            this.setState({
+                  [name]: value
+            })
+      }
+
+      handleSend(event) {
+            if(this.state.text === '')
+                  return
+            socket.emit('createMessage', { text: this.state.text, roomId: this.state.roomId, from: localStorage.phno }, () => {
+                  console.log('callback check')
+            })
+            this.setState({
+                  text: ''
+            }, () => {
+                  this.textInput.current.focus();
+            })
+      }
+
+      render() {
+            const { allMessages, activeUsers } = this.state
+            return (
+            <div className="chat-page">
+                  <div className="sidebar">
+                        <div className="sidebar-text">Active</div>
+                        <div className="sidebar-icon">
+                              <PeopleAltIcon 
+                              fontSize="large"
+                              />
+                        </div>
+                        <div className="active-users">
+                              {activeUsers.map((user) => <div><Chip avatar={<Avatar>{user.username[0]}</Avatar>} label={<div className="active-name">{user.username}</div>} /></div>)}
+                        </div>
+                        <div className="sidebar-image">
+                              <img className="actual-image" src="https://cdn3.iconfinder.com/data/icons/vector-robots-set-concept-in-blue-color-style/1772/robot_questions_answers_issues_problem_solving_consultant_consultation-512.png" />
+                        </div>
+                  </div>
+                  <div className="contain">
+                        <div className="display-section">
+                              {allMessages.map((msg) => <Chat message={msg}/>)}
+                              <div style={{ float:"left", clear: "both" }}
+                              ref={(el) => { this.messagesEnd = el; }}>
+                              </div>
+                        </div>
+                        <div className="send-section">
+                              <div className="form-contain">
+                              <div className="form-input">
+                                    <TextField 
+                                          value={this.state.text}
+                                          name="text"
+                                          label="Message"
+                                          variant="outlined"
+                                          required={true}
+                                          onChange={this.handleChange}
+                                          placeholder="Type here"
+                                          autoFocus={true}
+                                          fullWidth={true}
+                                          inputRef={this.textInput}
+                                          onKeyPress={(event) => {
+                                          if (event.charCode === 13) {
+                                                this.handleSend()
+                                          }
+                                          }
+                                          }
+                                    />
+                              </div>
+                              <div className="form-send">
+                                    <SendButton 
+                                          handleSend={this.handleSend}
+                                    />
+                              </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            )
+      }
+}
+
+export default Client
