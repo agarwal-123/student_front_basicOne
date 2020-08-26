@@ -226,7 +226,7 @@ html {
       margin-right: .7rem;
       position: absolute;
       top: 15%;
-      background-image: url(./SVG/mail4.svg);
+      background-image: url(../SVG/mail4.svg);
       background-size: cover; 
 }
 
@@ -238,7 +238,7 @@ html {
       position: absolute;
       bottom: 10%;
       margin-right: .7rem;
-      background-image: url(./SVG/phone.svg);
+      background-image: url(../SVG/phone.svg);
       background-size: cover;
 }
 

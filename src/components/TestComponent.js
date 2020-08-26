@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Test.css';
+import './CSS/Test.css';
 import {SUBJECTS} from '../shared/subjects';
 import {Link} from 'react-router-dom';
 
@@ -12,7 +12,7 @@ export class TestComponent extends Component {
                         <div className="t-subject" style={{backgroundColor:subject.col}}> 
                               <h3>{subject.name.toUpperCase()}</h3>
                         </div>
-                         </Link>
+                        </Link>
                       
                   );
             })

@@ -1,6 +1,6 @@
 import React , { Component, useState } from 'react';
 import { Switch, Route, Redirect, NavLink, Link} from 'react-router-dom';
-import './Main.css'
+import './CSS/Main.css'
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
 import Chapter from './ChapterComponent';
 import Videoplayer from './VideoplayerComponent';

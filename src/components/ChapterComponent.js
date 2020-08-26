@@ -1,5 +1,5 @@
 import React , { Component} from 'react';
-import './Chapter.css';
+import './CSS/Chapter.css';
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
 import {Link} from 'react-router-dom';
 

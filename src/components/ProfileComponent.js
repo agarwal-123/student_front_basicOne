@@ -10,7 +10,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 
-import './Profile.css';
+import './CSS/Profile.css';
 // import './icon-font.css';
 // import Navbar from './navbar';
 // import Sidebar from './sidebar';

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ChatMsg from '@mui-treasury/components/chatMsg/ChatMsg';
-import './Chat.css'
+import './CSS/Chat.css'
 import moment from 'moment'
 
 const generateTemplate = (message) => {

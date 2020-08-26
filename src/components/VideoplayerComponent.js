@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Vimeo from '@u-wave/react-vimeo';
 
-import './Videoplayer.css';
+import './CSS/Videoplayer.css';
 
 const videos = 
 [

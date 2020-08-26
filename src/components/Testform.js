@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import {questions} from '../shared/questions';
-import './Testform.css';
+import './CSS/Testform.css';
 import {withRouter} from 'react-router-dom';
 import Radio from '@material-ui/core/Radio';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 
 var correct=0,total=0,skip=0;
 
@@ -131,7 +131,7 @@ export class Testform extends Component {
 			<div className="t-container">
 
 				<div className="t-question">
-					<h3>{this.state.i+1}. {" "}{questions[this.state.i].name}</h3>
+					<h3>{this.state.i+1}. {" "}{questions[this.state.i].question}</h3>
                         </div>
 				<div className="t-option">
 					<div onClick={()=>this.setthis2('1')} className="t-check clearfix">
@@ -229,4 +229,3 @@ export class Testform extends Component {
 }
 
 export default withRouter(Testform);
-

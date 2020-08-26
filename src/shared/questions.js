@@ -1,7 +1,7 @@
 export const questions=[
       {
             id:"jgyhwt2883",
-            name:"Magnesium ribbon is rubbed before burning because it has a coating of",
+            question:"Magnesium ribbon is rubbed before burning because it has a coating of",
             op1:"basic magnesium carbonate",
             op2:"basic magnesium oxide",
             op3:"basic magnesium sulphide",
@@ -11,7 +11,7 @@ export const questions=[
       },
       {
             id:"iugsc66sjb",
-            name:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
+            question:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
             op1:"Iron metal is getting oxidised",
             op2:"Water is getting reduced",
             op3:"Water is acting as reducing agent",
@@ -21,7 +21,7 @@ export const questions=[
       },
       {
             id:"f87ewgjhbds",
-            name:"Magnesium ribbon is rubbed before burning because it has a coating of",
+            question:"Magnesium ribbon is rubbed before burning because it has a coating of",
             op1:"basic magnesium carbonate",
             op2:"basic magnesium oxide",
             op3:"basic magnesium sulphide",
@@ -31,7 +31,7 @@ export const questions=[
       },
       {
             id:"j123hwt2883",
-            name:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
+            question:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
             op1:"Iron metal is getting oxidised",
             op2:"Water is getting reduced",
             op3:"Water is acting as reducing agent",
@@ -41,7 +41,7 @@ export const questions=[
       },
       {
             id:"j12gyhwt2knjf8",
-            name:"Magnesium ribbon is rubbed before burning because it has a coating of",
+            question:"Magnesium ribbon is rubbed before burning because it has a coating of",
             op1:"basic magnesium carbonate",
             op2:"basic magnesium oxide",
             op3:"basic magnesium sulphide",
@@ -51,7 +51,7 @@ export const questions=[
       },
       {
             id:"sdfghj23yy2883",
-            name:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
+            question:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
             op1:"Iron metal is getting oxidised",
             op2:"Water is getting reduced",
             op3:"Water is acting as reducing agent",

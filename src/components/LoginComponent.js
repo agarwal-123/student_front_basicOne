@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 import { Switch, Route, Redirect, NavLink,useHistory} from 'react-router-dom';
-import './Login.css';
+import './CSS/Login.css';
 import {sendotp,verifyotp,register,login} from '../shared/http';
 
 function Votp({input,contactnumber,assignnumber}){
