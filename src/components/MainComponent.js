@@ -4,7 +4,8 @@ import './CSS/Main.css'
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
 import Chapter from './ChapterComponent';
 import Videoplayer from './VideoplayerComponent';
-import Chat from './ChatComponent';
+import Query from './queryComponent';
+import Client from './client/client'
 import Profile from './ProfileComponent';
 import Test from './TestComponent';
 import Testform from './Testform';
@@ -31,7 +32,7 @@ function Sidebar(){
             <div className="m-sidebar">
                   <NavLink className="nav-link btt1 wrap"  to='/subject'><img src = {books} /></NavLink>
                   <NavLink className="nav-link btt1 wrap"  to='/test'> <img src = {note} /></NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/chat'><img src = {home} /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/query'><img src = {home} /></NavLink>
                   <NavLink className="nav-link btt1 wrap"  to='/profile'><img src = {users} /></NavLink>
             </div>
       );
@@ -106,8 +107,17 @@ function Subject(){
 
 
 class Main extends Component{
-
-      
+      constructor(props) {
+            super(props);
+            this.state = {
+                  roomID: ""
+            };
+            this.changeRoomID = this.changeRoomID.bind(this);
+      }
+      changeRoomID(id) {
+            
+            this.setState({ roomID: id},()=>console.log("aayaa",this.state.roomID))
+      }
       render(){
 
             const selectchapter=({match})=>{
@@ -135,7 +145,8 @@ class Main extends Component{
                                           <Route path='/subject/:subname' component={selectchapter} />
                                           <Route path='/chapter/:chapter/:topic' component={selecttopic} />
                                           <Route exact path='/test' component={()=><Test/>}/>
-                                          <Route path='/chat' component={()=><Chat/>}/>
+                                          <Route path='/chat' component={()=><Client Room={this.state.roomID}/>}/>
+                                          <Route path="/query" component={() => <Query changeRoomID={this.changeRoomID} />} />
                                           <Route path='/Profile' component={()=><Profile/>}/>
                                           <Route path='/test/:subname' component={()=><Testform/>}/>
                                           <Redirect to="/subject"/>
