@@ -1,6 +1,8 @@
 import React , { Component } from 'react';
 import Login from './LoginComponent';
 import Main from './MainComponent';
+//hello
+var ac2=0,bc2=0;
 
 class Multiplepage extends Component{
 
