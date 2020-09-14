@@ -15,6 +15,9 @@ import users from './SVG/users.svg';
 import note from './SVG/bell.svg';
 import contact from './SVG/address-book.svg';
 
+import {getsubject} from '../shared/httpcourses';
+import { getquestion } from '../shared/httptest';
+
 function Navbar(){
       return (
             <div>
@@ -39,6 +42,16 @@ function Sidebar(){
 
 function Subject(){
 
+
+      const getsub=async()=>{
+            var res = await getsubject();
+            console.log(res);
+      };
+
+      getsub();
+
+
+      
       const subjects=SUBJECTS.map((subject)=>{
             return(
                   <Link className="link" to={`/subject/${subject.name}`}>

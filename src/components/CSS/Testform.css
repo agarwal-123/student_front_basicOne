@@ -15,6 +15,17 @@
       overflow-y: scroll;
 }
 
+.t-wrapper .t-notavail{
+      color:white;
+      margin-left: 31%;
+      margin-top: 20%;
+}
+
+.t-loader{
+      margin-left: 45%;
+      margin-top: 20%;
+}
+
 .t-container{
       background-color: white;
       margin-left: 30%;

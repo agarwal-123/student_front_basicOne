@@ -1,6 +1,9 @@
 export const questions=[
       {
-            id:"jgyhwt2883",
+            grade:"10th",
+            sub:"physics",
+            chapter:"electic",
+            _id:"jgyhwt2883",
             question:"Magnesium ribbon is rubbed before burning because it has a coating of",
             op1:"basic magnesium carbonate",
             op2:"basic magnesium oxide",
@@ -10,7 +13,10 @@ export const questions=[
             note:"Magnesium ribbon should be cleaned with sandpaper before burning in the air because of the following reasons: Magnesium very reactive element which rapidly reacts with oxygen in the air to form a white layer of magnesium oxide and this layer will not burn"
       },
       {
-            id:"iugsc66sjb",
+            grade:"10th",
+            sub:"physics",
+            chapter:"electic",
+            _id:"iugsc66sjb",
             question:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
             op1:"Iron metal is getting oxidised",
             op2:"Water is getting reduced",
@@ -20,7 +26,10 @@ export const questions=[
             note:"Magnesium ribbon should be cleaned with sandpaper before burning in the air because of the following reasons: Magnesium very reactive element which rapidly reacts with oxygen in the air to form a white layer of magnesium oxide and this layer will not burn"
       },
       {
-            id:"f87ewgjhbds",
+            grade:"10th",
+            sub:"physics",
+            chapter:"electic",
+            _id:"f87ewgjhbds",
             question:"Magnesium ribbon is rubbed before burning because it has a coating of",
             op1:"basic magnesium carbonate",
             op2:"basic magnesium oxide",
@@ -30,7 +39,10 @@ export const questions=[
             note:"Magnesium ribbon should be cleaned with sandpaper before burning in the air because of the following reasons: Magnesium very reactive element which rapidly reacts with oxygen in the air to form a white layer of magnesium oxide and this layer will not burn"
       },
       {
-            id:"j123hwt2883",
+            grade:"10th",
+            sub:"physics",
+            chapter:"electic",
+            _id:"j123hwt2883",
             question:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
             op1:"Iron metal is getting oxidised",
             op2:"Water is getting reduced",
@@ -40,7 +52,10 @@ export const questions=[
             note:"Magnesium ribbon should be cleaned with sandpaper before burning in the air because of the following reasons: Magnesium very reactive element which rapidly reacts with oxygen in the air to form a white layer of magnesium oxide and this layer will not burn"
       },
       {
-            id:"j12gyhwt2knjf8",
+            grade:"10th",
+            sub:"physics",
+            chapter:"electic",
+            _id:"j12gyhwt2knjf8",
             question:"Magnesium ribbon is rubbed before burning because it has a coating of",
             op1:"basic magnesium carbonate",
             op2:"basic magnesium oxide",
@@ -50,7 +65,10 @@ export const questions=[
             note:"Magnesium ribbon should be cleaned with sandpaper before burning in the air because of the following reasons: Magnesium very reactive element which rapidly reacts with oxygen in the air to form a white layer of magnesium oxide and this layer will not burn"
       },
       {
-            id:"sdfghj23yy2883",
+            grade:"10th",
+            sub:"physics",
+            chapter:"electic",
+            _id:"sdfghj23yy2883",
             question:"Which of the following statements about the given reaction are correct ? 3Fe (s) + 4H2O (g) → Fe3O4 (s) + 4 H2 (g)",
             op1:"Iron metal is getting oxidised",
             op2:"Water is getting reduced",
