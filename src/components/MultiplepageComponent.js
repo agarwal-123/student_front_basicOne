@@ -42,11 +42,7 @@ class Multiplepage extends Component{
       render(){           
             if(!this.state.isVerified){
                   return(  
-                        <Switch>
-                              <Route path='/home' component={()=><HomeComponent/>} />
-                              <Route path='/enter' component={()=><Login changestate = {this.changestate}/>} />
-                              <Redirect to="/home"/>
-                        </Switch>                          
+                        <Login changestate = {this.changestate}/>                 
                   );
             }
             else{

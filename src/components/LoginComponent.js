@@ -2,6 +2,7 @@ import React , { Component } from 'react';
 import { Switch, Route, Redirect, NavLink,useHistory} from 'react-router-dom';
 import './CSS/Login.css';
 import {sendotp,verifyotp,register,login} from '../shared/http';
+import HomeComponent from './HomeComponent';
 
 function Votp({input,contactnumber,assignnumber}){
 	
@@ -182,7 +183,6 @@ class Login extends Component{
 				</Switch>    
 			</div>
 			</div>
-			
 		);
 	}
 }
