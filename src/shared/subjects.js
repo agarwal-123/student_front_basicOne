@@ -15,7 +15,7 @@ export const SUBJECTS =
       {
             subid:2,
             id:   "sub2",
-            name: "Mathematics",
+            name: "Maths",
             col:"#eb4d4b"
       },
       {

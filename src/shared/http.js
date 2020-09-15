@@ -1,6 +1,7 @@
 import {baseurl} from './baseurl'
 
 export const verifyToken= async()=>{
+      
       var myHeaders = new Headers();
       myHeaders.append("authorization", "Bearer "+localStorage.token);
       
@@ -154,17 +155,19 @@ export const fetchAllTopics = async (subject)=>{
 
 
 export const updateVideoTime = async (videoID,time)=>{
+      
       var myHeaders = new Headers();
       myHeaders.append("authorization", "Bearer "+localStorage.token);
       myHeaders.append("Content-Type", "application/json");
 
       var raw = JSON.stringify({"video":videoID,"time":time});
       console.log(raw)
+      
       var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
       }
 
       var res=await fetch(baseurl+"updateTime", requestOptions)
@@ -173,22 +176,26 @@ export const updateVideoTime = async (videoID,time)=>{
 }
 
 export const getVideoTime = async (videoID)=>{
+     
       var myHeaders = new Headers();
       myHeaders.append("authorization", "Bearer "+localStorage.token);
       myHeaders.append("Content-Type", "application/json");
 
       var raw = JSON.stringify({"video":videoID});
       console.log(raw)
+     
       var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
       }
+
       console.log(videoID,"lol")
       var res=await fetch(baseurl+"getTime", requestOptions)
       console.log(res,"gotTime")
       res=await res.json()
       console.log(res,"gotTime")
+      
       return res
 }

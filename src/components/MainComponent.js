@@ -1,16 +1,18 @@
 import React , { Component, useState } from 'react';
 import { Switch, Route, Redirect, NavLink, Link} from 'react-router-dom';
+
 import './CSS/Main.css'
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
 import Chapter from './ChapterComponent';
 import Videoplayer from './VideoplayerComponent';
 import Query from './queryComponent';
 import Client from './client/client';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import Profile from './ProfileComponent';
 import Test from './TestComponent';
 import Testform from './Testform';
+
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 import home from './SVG/home3.svg';
 import books from './SVG/books.svg';
@@ -19,7 +21,9 @@ import note from './SVG/bell.svg';
 import contact from './SVG/address-book.svg';
 
 function Navbar(){
+      
       const [anchorEl, setAnchorEl] = useState(null);
+      
       const handleClick = (event) => {
             setAnchorEl(event.currentTarget);
       };
@@ -27,36 +31,42 @@ function Navbar(){
       const handleClose = () => {
             setAnchorEl(null);
       };
+
       return (
-            <div className="navbar">
-                <div className="HeadPart">
-                    <div className="app-description">
+      <div className="navbar">
+            <div className="HeadPart">
+                  
+                  <div className="app-description">
                         <div className="app-logo"><img  src='./assets/logo.png'/></div>
                         <div className="sep">|</div>
                         <div className="page-name">PROFILE PAGE</div>
-                    </div>
-                    <div className="buttons">
+                  </div>
+                  
+                  <div className="buttons">
+                        
                         <div>
-                            <a className="b1" href="#" onClick={handleClick}>My Profile</a>
+                              <a className="b1" href="#" onClick={handleClick}>My Profile</a>
                         </div>
+                        
                         <Menu
-                           id="simple-menu"
-                           anchorEl={anchorEl}
-                           keepMounted
-                           aria-controls="customized-menu"
-                           aria-haspopup="true"
-                           getContentAnchorEl={null}
-                           open={Boolean(anchorEl)}
-                           anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-                           targetOrigin={{horizontal: 'left', vertical: 'top'}}
-                           onClose={handleClose}
+                              id="simple-menu"
+                              anchorEl={anchorEl}
+                              keepMounted
+                              aria-controls="customized-menu"
+                              aria-haspopup="true"
+                              getContentAnchorEl={null}
+                              open={Boolean(anchorEl)}
+                              anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                              targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                              onClose={handleClose}
                         >
                               <MenuItem onClick={handleClose}>My Profile</MenuItem>
                               <MenuItem onClick={handleClose}>Logout</MenuItem>
                         </Menu>
-                    </div>
-                </div>
+                  
+                  </div>
             </div>
+      </div>
       );
 }
 
@@ -84,8 +94,10 @@ function Subject(){
       });
      
       const physics=PHYSICS.map((chapter)=>{
+            
             if(chapter.name.length>25)
                   chapter.name=chapter.name.substring(0,22)+"...";
+            
             return(
                   <div className="chapter main-col4">
                         <img src="./assets/book3.jpg"></img>
@@ -119,13 +131,14 @@ function Subject(){
 
       return(
             <div className="comp">       
+                  
                   <img className="header-img" src="./assets/book11.jpg"></img>
                   <h1>Explore by subjects</h1>
+                  
                   <div className="row1 clearfix">
-                        {/* <div className="all-subject"> */}
-                              {subjects}
-                        {/* </div> */}
+                        {subjects}
                   </div>
+                  
                   <div className="row2">
                         <div className="chapters clearfix">
                               {physics}
@@ -140,6 +153,7 @@ function Subject(){
 
 
 class Main extends Component{
+      
       constructor(props) {
             super(props);
             this.state = {
@@ -147,10 +161,11 @@ class Main extends Component{
             };
             this.changeRoomID = this.changeRoomID.bind(this);
       }
+      
       changeRoomID(id) {
-            
             this.setState({ roomID: id},()=>console.log("aayaa",this.state.roomID))
       }
+      
       render(){
 
             const selectchapter=({match})=>{
@@ -168,26 +183,27 @@ class Main extends Component{
             }
 
             return(
-                  <div className="main">
-                        <Navbar/>
-                        <div className="main-container clearfix">
-                              <Sidebar/>
-                              <div className="side-container">
-                                    <Switch>
-                                          <Route exact path='/subject' component={()=><Subject/>} />
-                                          <Route path='/subject/:subname' component={selectchapter} />
-                                          <Route path='/chapter/:chapter/:topic' component={selecttopic} />
-                                          <Route exact path='/test' component={()=><Test/>}/>
-                                          <Route path='/chat' component={()=><Client Room={this.state.roomID}/>}/>
-                                          <Route path="/query" component={() => <Query changeRoomID={this.changeRoomID} />} />
-                                          <Route path='/Profile' component={()=><Profile/>}/>
-                                          <Route path='/test/:subname' component={()=><Testform/>}/>
-                                          <Redirect to="/subject"/>
-                                    </Switch>
-                              </div> 
-                        </div>   
-                       
-                  </div>
+
+            <div className="main">
+                  <Navbar/>
+                  <div className="main-container clearfix">
+                        <Sidebar/>
+                        <div className="side-container">
+                              <Switch>
+                                    <Route exact path='/subject' component={()=><Subject/>} />
+                                    <Route path='/subject/:subname' component={selectchapter} />
+                                    <Route path='/chapter/:chapter/:topic' component={selecttopic} />
+                                    <Route exact path='/test' component={()=><Test/>}/>
+                                    <Route path='/chat' component={()=><Client Room={this.state.roomID}/>}/>
+                                    <Route path="/query" component={() => <Query changeRoomID={this.changeRoomID} />} />
+                                    <Route path='/Profile' component={()=><Profile/>}/>
+                                    <Route path='/test/:subname' component={()=><Testform/>}/>
+                                    <Redirect to="/subject"/>
+                              </Switch>
+                        </div> 
+                  </div>         
+            </div>
+
             );
       }
 }

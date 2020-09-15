@@ -8,6 +8,7 @@ import Radio from '@material-ui/core/Radio';
 var correct=0,total=0,skip=0;
 
 export class Testform extends Component {
+
       constructor(props){
 		super(props);
 		this.state={
@@ -43,6 +44,7 @@ export class Testform extends Component {
 			});
 		}
 	}
+
 	skip(){
 		skip++;
 		if(questions.length-1===this.state.i){
@@ -74,7 +76,6 @@ export class Testform extends Component {
 			alert("Choose one of the option");
 		}
 		else{
-			
 			var obj={
 				id:questions[this.state.i].id,
 				ac:this.check()
@@ -90,6 +91,7 @@ export class Testform extends Component {
 			});
 		}
 	}
+
 	setthis(event){
 		if(!this.state.curshow){
 			this.setState({
@@ -97,6 +99,7 @@ export class Testform extends Component {
 			});
 		}
 	}
+
 	setthis2(val){
 		if(!this.state.curshow){
 			this.setState({
@@ -104,12 +107,12 @@ export class Testform extends Component {
 			});
 		}
 	}
+
 	handlefinish(){
             this.props.history.push("/test");
 	}
 	  
 	render() {
-
 
 	if(this.state.isfinish){
 		return(
@@ -133,6 +136,7 @@ export class Testform extends Component {
 				<div className="t-question">
 					<h3>{this.state.i+1}. {" "}{questions[this.state.i].question}</h3>
                         </div>
+				
 				<div className="t-option">
 					<div onClick={()=>this.setthis2('1')} className="t-check clearfix">
 					<div className="t-radio">
@@ -149,6 +153,7 @@ export class Testform extends Component {
 					</div>
 					</div>
                         </div>
+				
 				<div className="t-option">
 					<div onClick={()=>this.setthis2('2')} className="t-check clearfix">
 					<div className="t-radio">
@@ -165,6 +170,7 @@ export class Testform extends Component {
 					</div>
 					</div>
                         </div>
+				
 				<div className="t-option">
 					<div onClick={()=>this.setthis2('3')} className="t-check clearfix">
 					<div className="t-radio">
@@ -181,6 +187,7 @@ export class Testform extends Component {
 					</div>
 					</div>
                         </div>
+				
 				<div className="t-option">
 					<div onClick={()=>this.setthis2('4')} className="t-check clearfix">
 					<div className="t-radio">
@@ -197,7 +204,8 @@ export class Testform extends Component {
 					</div>
 					</div>
                         </div>
-                        {
+                        
+				{
                               !this.state.attempt?
                                     <div className="t-option">
                                     <button className="t-btn-skip" onClick={()=>{this.skip();}}><h3>Skip</h3></button>

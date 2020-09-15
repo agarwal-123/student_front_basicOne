@@ -1,6 +1,8 @@
 import React , { Component } from 'react';
+
 import Login from './LoginComponent';
 import Main from './MainComponent';
+
 import {verifyToken} from '../shared/http';
 
 
@@ -22,9 +24,10 @@ class Multiplepage extends Component{
             });
       }
 
-
       async componentDidMount(){
+            
             //check validity of token
+           
             if(localStorage.token){
                   var res= await verifyToken()
                   console.log(res,"res")

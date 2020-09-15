@@ -58,6 +58,7 @@ class Videoplayer extends Component{
       }
 
       async selectVideo(index) {
+            
             await this.setState({ videoIndex: index });
             await this.setState({ timeFetched: 0 });
             var res= await getVideoTime(videos[this.state.videoIndex].id)
@@ -69,7 +70,6 @@ class Videoplayer extends Component{
 
             else await this.setState({startTime:0})
             await this.setState({timeFetched:1})
-
       }
 
       async handlePlayerPause() {
@@ -77,8 +77,8 @@ class Videoplayer extends Component{
             console.log("Paused",res)
       }
 
-
       async componentDidMount(){
+
             var res= await getVideoTime(videos[this.state.videoIndex].id)
             
             if( res.data ) {
@@ -92,7 +92,6 @@ class Videoplayer extends Component{
 
       async onEnd() {
             var res= await updateVideoTime(videos[this.state.videoIndex].id,this.state.progress.duration-1)
-
             console.log("Ended!!!!")
       }
 
@@ -102,62 +101,74 @@ class Videoplayer extends Component{
       }
 
       render() {
-            const { videoIndex } = this.state;
-        
-            const video = videos[videoIndex];
-            if(this.state.timeFetched!==0){
+
+      const { videoIndex } = this.state;
+      const video = videos[videoIndex];
+      
+      if(this.state.timeFetched!==0){
+            
             return (
-              <div className="container-video">
-        
-              <div className="video">
-                <div className="main-video ">
-                <div class="vimeo">
+                  
+            <div className="container-video">
+      
+            <div className="video">
+
+                  <div className="main-video ">
+                  <div class="vimeo">
+                  
                   <Vimeo
-                    video={video.id}
-                    width={1000}
-                    height={570}
-                    autoplay
-                    speed={true}
-                    start={Math.max(0,this.state.startTime-15)}
-                    // volume={volume}
-                    // paused={paused}
-                    onEnd={this.onEnd}
-                    onPause={this.handlePlayerPause}
-                    // onPlay={this.handlePlayerPlay}
-                    onProgress={this.onProgressHandler}
+                        video={video.id}
+                        width={1000}
+                        height={570}
+                        autoplay
+                        speed={true}
+                        start={Math.max(0,this.state.startTime-15)}
+                        // volume={volume}
+                        // paused={paused}
+                        onEnd={this.onEnd}
+                        onPause={this.handlePlayerPause}
+                        // onPlay={this.handlePlayerPlay}
+                        onProgress={this.onProgressHandler}
                   />
+
                   </div>
-                </div>
-                <p className="main-text"> 
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
-                took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                but also the leap into electronic typesetting, remaining essentially unchanged 
-                </p>
-                </div>
-        
-                <div className="other-videos">
-                  <div className="collection">
-                    {videos.map((choice, index) => (
-        
-                      <a
+                  </div>
+
+                  <p className="main-text"> 
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
+                  took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+                  but also the leap into electronic typesetting, remaining essentially unchanged 
+                  </p>
+            
+            </div>
+      
+            <div className="other-videos">
+            <div className="collection">
+            
+            {
+                  videos.map((choice, index) => (
+                  <a
                         href={`#!/video/${index}`}
                         className={`other clearfix collection-item ${video === choice ? 'active' : ''}`}
                         onClick={() => this.selectVideo(index)}
-                      >
+                  >
                         <img src={choice.image} />
                         <div class="other-text">{choice.name}</div>
-                      </a>
-                    ))}
-                  </div>
-        
-                </div>
-        
-              </div>
+                  </a>
+                  ))
+            }
+
+            </div>
+            </div>
+      
+            </div>
+
             );
-                    }
-                    else return <div>nk</div>
-          }
+      }
+      else return <div>nk</div>
+      
+      }
 }
 
 export default Videoplayer;
