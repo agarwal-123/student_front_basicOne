@@ -1,7 +1,9 @@
 import React , { Component } from 'react';
+import { Switch, Route, Redirect, NavLink, Link, useHistory} from 'react-router-dom';
 
 import Login from './LoginComponent';
 import Main from './MainComponent';
+import HomeComponent from './HomeComponent';
 
 import {verifyToken} from '../shared/http';
 import Loader from './Loader';
@@ -62,7 +64,7 @@ class Multiplepage extends Component{
             }
             else{
                   return(      
-                        <Main/>
+                        <Main changestate = {this.changestate}/>
                   );
             }            
       }

@@ -14,6 +14,9 @@ import headers from "./headers";
 import Chat from "./chat";
 import SendButton from "./sendBtn";
 
+import Loader from '../Loader';
+
+
 let socket;
 
 class Client extends Component {
@@ -26,6 +29,7 @@ class Client extends Component {
 			allMessages: [],
 			roomId: this.props.Room,
 			activeUsers: [],
+			isLoading:true
 		};
 		this.handleSend = this.handleSend.bind(this);
 		this.handleChange = this.handleChange.bind(this);
@@ -41,6 +45,7 @@ class Client extends Component {
 	}
 
 	async componentDidMount() {
+		// this.setState({isLoading: true});
 		
 		socket = socketIOClient("https://sgbtech96-chat-server.herokuapp.com/");
 
@@ -70,7 +75,7 @@ class Client extends Component {
 					console.log(this.state.allMessages);
 				}
 			);
-
+			this.setState({isLoading: false});
 			this.scrollToBottom();
 		});
 
@@ -117,7 +122,10 @@ class Client extends Component {
 	render() {
 
 	const { allMessages, activeUsers } = this.state;
-	
+
+	if(this.state.isLoading) return(<Loader/>)
+
+	else
 	return (
 
 		<div className="chat-page">
