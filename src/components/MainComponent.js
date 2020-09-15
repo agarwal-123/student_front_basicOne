@@ -1,5 +1,5 @@
 import React , { Component, useState } from 'react';
-import { Switch, Route, Redirect, NavLink, Link} from 'react-router-dom';
+import { Switch, Route, Redirect, NavLink, Link, useHistory} from 'react-router-dom';
 
 import './CSS/Main.css'
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
@@ -20,9 +20,10 @@ import users from './SVG/users.svg';
 import note from './SVG/bell.svg';
 import contact from './SVG/address-book.svg';
 
-function Navbar(){
+function Navbar(props){
       
       const [anchorEl, setAnchorEl] = useState(null);
+      const history = useHistory();
       
       const handleClick = (event) => {
             setAnchorEl(event.currentTarget);
@@ -60,8 +61,8 @@ function Navbar(){
                               targetOrigin={{horizontal: 'left', vertical: 'top'}}
                               onClose={handleClose}
                         >
-                              <MenuItem onClick={handleClose}>My Profile</MenuItem>
-                              <MenuItem onClick={handleClose}>Logout</MenuItem>
+                              <MenuItem onClick={()=>{ handleClose(); history.push("./Profile"); }}>My Profile</MenuItem>
+                              <MenuItem onClick={()=>{ handleClose(); localStorage.removeItem('token'); props.changestate(false) }}>Logout</MenuItem>
                         </Menu>
                   
                   </div>
@@ -185,7 +186,7 @@ class Main extends Component{
             return(
 
             <div className="main">
-                  <Navbar/>
+                  <Navbar changestate={this.props.changestate}/>
                   <div className="main-container clearfix">
                         <Sidebar/>
                         <div className="side-container">

@@ -40,12 +40,12 @@ class Multiplepage extends Component{
       render(){           
             if(!this.state.isVerified){
                   return(      
-                        <Login changestate={this.changestate}/>
+                        <Login changestate = {this.changestate}/>
                   );
             }
             else{
                   return(      
-                        <Main/>
+                        <Main changestate = {this.changestate}/>
                   );
             }            
       }
