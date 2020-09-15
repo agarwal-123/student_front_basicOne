@@ -15,7 +15,7 @@ function Votp({input,contactnumber,assignnumber}){
 
     const handlesubmit=async (event)=>{
         event.preventDefault();
-        alert("data "+myinput.otp.value);
+        // alert("data "+myinput.otp.value);
         var res= await verifyotp(myinput.otp.value,contactnumber);
         if(res.message=="OTP Verified"){
             history.push("/register");
@@ -26,10 +26,13 @@ function Votp({input,contactnumber,assignnumber}){
     }
   
     return(
+        <div>
+            <div>Enter "superUser" if OTP not recieved</div>
             <form onSubmit={handlesubmit}>
             <input type="text" id="contactnumber" ref={(input)=>myinput.otp=input} placeholder="OTP" required/>
             <input type="submit" id="submit" placeholder="Verify Otp" required/>
-            </form>     
+            </form> 
+        </div>    
     );
 }
 
@@ -53,13 +56,14 @@ function Register({input,changestate,contactnumber}){
 
     const handlesubmit= async (event)=>{
         event.preventDefault();
-        alert("data "+myinput.fname.value+" "+myinput.lname.value+" "+myinput.pass.value+" "+
-        myinput.email.value+" "+myinput.state.value+" "+myinput.city.value+" "+myinput.grade.value+" "+myinput.board.value);
+        // alert("data "+myinput.fname.value+" "+myinput.lname.value+" "+myinput.pass.value+" "+
+        // myinput.email.value+" "+myinput.state.value+" "+myinput.city.value+" "+myinput.grade.value+" "+myinput.board.value);
         var res= await register(myinput.fname.value,myinput.lname.value,contactnumber,myinput.pass.value,
         myinput.email.value,myinput.state.value,myinput.city.value,myinput.grade.value,myinput.board.value);
         console.log(res,'2');
         if(res.message=="Successfully registered"){
-            changestate();
+            localStorage.setItem("token",res.token)
+            changestate(true);
         }
     }
   
@@ -90,7 +94,7 @@ function SignIn({input,changestate}){
 
     const handlesubmit=async (event)=>{
         event.preventDefault();
-        alert("data "+myinput.num.value+" "+myinput.pass.value);
+        // alert("data "+myinput.num.value+" "+myinput.pass.value);
         var res=await login(myinput.num.value,myinput.pass.value);
         console.log(res,' res ');
         if(res.err){
@@ -98,7 +102,7 @@ function SignIn({input,changestate}){
         }
         if(res.token){
             localStorage.token=res.token;
-            changestate();
+            changestate(true);
         }
     }
   
@@ -121,10 +125,13 @@ function SignUp({input,assignnumber}){
 
     const handlesubmit=async (event)=>{
         event.preventDefault();
-        alert("data "+myinput.num.value);
+        // alert("data "+myinput.num.value);
         var res=await sendotp(myinput.num.value);
+        // res=
+        console.log(res.message,"otp")
         if(res.message=="OTP Sent"){
-            assignnumber(myinput.num);
+            assignnumber(myinput.num.value);
+            // this.setState({})
             history.push("/verifyotp");
         }
     }

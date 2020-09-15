@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Vimeo from '@u-wave/react-vimeo';
 
 import './CSS/Videoplayer.css';
+import {updateVideoTime,getVideoTime} from '../shared/http'
 
 const videos = 
 [
@@ -45,20 +46,66 @@ class Videoplayer extends Component{
             super(props);
             this.state = {
                   videoIndex: 0,
-                  videoList:[]
+                  videoList:[],
+                  progress:{},
+                  startTime:0,
+                  timeFetched:0
             };
             this.selectVideo=this.selectVideo.bind(this);
-            
+            this.handlePlayerPause=this.handlePlayerPause.bind(this);
+            this.onProgressHandler=this.onProgressHandler.bind(this);
+            this.onEnd=this.onEnd.bind(this);
       }
 
-      selectVideo(index) {
-            this.setState({ videoIndex: index });
+      async selectVideo(index) {
+            await this.setState({ videoIndex: index });
+            await this.setState({ timeFetched: 0 });
+            var res= await getVideoTime(videos[this.state.videoIndex].id)
+            
+            if( res.message=='Success !' ) {
+                  console.log(res,parseInt(res.data.time),"time!!")
+                  await this.setState({startTime:parseInt(res.data.time)})
+            }
+
+            else await this.setState({startTime:0})
+            await this.setState({timeFetched:1})
+
+      }
+
+      async handlePlayerPause() {
+            var res= await updateVideoTime(videos[this.state.videoIndex].id,this.state.progress.seconds)
+            console.log("Paused",res)
+      }
+
+
+      async componentDidMount(){
+            var res= await getVideoTime(videos[this.state.videoIndex].id)
+            
+            if( res.data ) {
+                  console.log(res,parseInt(res.data.time),"time!!")
+                  await this.setState({startTime:parseInt(res.data.time)})
+            }
+            else await this.setState({startTime:0})
+            await this.setState({timeFetched:1})
+      }
+
+
+      async onEnd() {
+            var res= await updateVideoTime(videos[this.state.videoIndex].id,this.state.progress.duration-1)
+
+            console.log("Ended!!!!")
+      }
+
+      onProgressHandler(e) {
+            this.setState({progress:e})
+            console.log(e)
       }
 
       render() {
             const { videoIndex } = this.state;
         
             const video = videos[videoIndex];
+            if(this.state.timeFetched!==0){
             return (
               <div className="container-video">
         
@@ -70,10 +117,14 @@ class Videoplayer extends Component{
                     width={1000}
                     height={570}
                     autoplay
+                    speed={true}
+                    start={Math.max(0,this.state.startTime-15)}
                     // volume={volume}
                     // paused={paused}
-                    // onPause={this.handlePlayerPause}
+                    onEnd={this.onEnd}
+                    onPause={this.handlePlayerPause}
                     // onPlay={this.handlePlayerPlay}
+                    onProgress={this.onProgressHandler}
                   />
                   </div>
                 </div>
@@ -104,6 +155,8 @@ class Videoplayer extends Component{
         
               </div>
             );
+                    }
+                    else return <div>nk</div>
           }
 }
 

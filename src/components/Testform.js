@@ -1,19 +1,11 @@
 import React, { Component } from 'react'
-// import {questions} from '../shared/questions';
+import {questions} from '../shared/questions';
 import './CSS/Testform.css';
 import {withRouter} from 'react-router-dom';
 import Radio from '@material-ui/core/Radio';
-import {userattempt} from '../shared/httptest';
-import {getquestion} from '../shared/httptest';
 
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
-import Loader from 'react-loader-spinner'
-
-var chacha=0;
-var tata=0;
 
 var correct=0,total=0,skip=0;
-var questions;
 
 export class Testform extends Component {
       constructor(props){
@@ -24,8 +16,7 @@ export class Testform extends Component {
 			attempt:0,
 			curshow:0,
 			isfinish:0,
-			attempted:[],
-			isloading:true
+			attempted:[]
 		};
 		this.continue=this.continue.bind(this);
 		this.submit=this.submit.bind(this);
@@ -34,13 +25,6 @@ export class Testform extends Component {
 		this.setthis2=this.setthis2.bind(this);
 		this.handlefinish=this.handlefinish.bind(this);
 		this.check=this.check.bind(this);
-	}
-
-	async componentDidMount(){
-		questions = await getquestion(this.props.match.params.subname); 
-		this.setState({isloading:false});
-		console.log(questions,"q ");
-		console.log(this.props.match.params.subname);
 	}
 
 	continue(){
@@ -85,27 +69,20 @@ export class Testform extends Component {
 			return false;
 	}
 
-	async submit(){
+	submit(){
 		if(this.state.activeButton==='0'){
 			alert("Choose one of the option");
 		}
 		else{
-
-			
 			
 			var obj={
-				_id:questions[this.state.i]._id,
-				ac:this.check(),
-				sub:questions[this.state.i].sub,
-				chapter:questions[this.state.i].chapter
+				id:questions[this.state.i].id,
+				ac:this.check()
 			};
 			if(obj.ac)
 				correct++;
 			total++;
-
-			var res=await userattempt(obj);
-			console.log(res);
-			// this.state.attempted.push(obj);
+			this.state.attempted.push(obj);
 
 			this.setState({
 				curshow:1,
@@ -149,23 +126,6 @@ export class Testform extends Component {
 		);
 	}
 	else{
-
-		if(this.state.isloading){
-			return(
-			<div className="t-wrapper">
-				<Loader className="t-loader" type="TailSpin" color="#00BFFF" height={80} width={80} />
-			</div>
-			);
-		}
-		else if(questions.length==0){
-			return(
-				<div className="t-wrapper">
-					<h1 className="t-notavail">Test is not available right now</h1>
-				</div>
-			);
-		}
-		else{
-
 		return (
 			<div className="t-wrapper">
 			<div className="t-container">
@@ -263,7 +223,6 @@ export class Testform extends Component {
 	
 			</div>
 		);
-		}
 		
 	}
 	}

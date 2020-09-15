@@ -1,25 +1,37 @@
 import React , { Component } from 'react';
 import Login from './LoginComponent';
 import Main from './MainComponent';
-//hello
-var ac2=0,bc2=0;
+import {verifyToken} from '../shared/http';
+
 
 class Multiplepage extends Component{
 
       constructor(props){
             super(props);
             this.state = {
-                  isVerified: true
+                  isVerified: false
             };
             this.changestate=this.changestate.bind(this);
         
       }
 
-      changestate(){
-            console.log(this.state.isVerified);
+      changestate(value){
+            console.log(value);
             this.setState({
-                  isVerified: !this.state.isVerified
+                  isVerified: value
             });
+      }
+
+
+      async componentDidMount(){
+            //check validity of token
+            if(localStorage.token){
+                  var res= await verifyToken()
+                  console.log(res,"res")
+                  if(res.user) this.setState({isVerified:true})
+                  else this.setState({isVerified:false})
+            }
+            else this.setState({isVerified:false})
       }
 
       render(){           

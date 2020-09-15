@@ -10,6 +10,8 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 
+import {verifyToken} from '../shared/http'
+
 import './CSS/Profile.css';
 // import './icon-font.css';
 // import Navbar from './navbar';
@@ -36,6 +38,7 @@ class Profile extends Component{
             this.uploadFile = this.uploadFile.bind(this)
             this.handleClickOpen = this.handleClickOpen.bind(this)
             this.handleClose = this.handleClose.bind(this)
+            this.renderData = this.renderData.bind(this)
       }
       
       handleClickOpen(){
@@ -52,9 +55,15 @@ class Profile extends Component{
             })
       }
 
+      renderData(data){
+            this.setState({
+                  rawData: data
+            })
+      }
+
       uploadFile(event) {
             var myHeaders = new Headers();
-            myHeaders.append("authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjAxZjJkM2E3NTM4YzJkN2FlNDQ0ZWMiLCJpYXQiOjE1OTQwNjAwNjV9.9-D9sxfYjvrxzibd-_rfZ-XAVrrZF2IWNg8bnhVl5eg");
+            myHeaders.append("authorization", "Bearer "+localStorage.token);
 
             var formdata = new FormData();
             formdata.append("subject", "Maths");
@@ -79,34 +88,7 @@ class Profile extends Component{
                   })
                   .catch(error => console.log('error', error));
       }
-      componentDidMount() {
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
 
-            var raw = JSON.stringify({"phone":"+918076713870","password":"dhruva"});
-
-            var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-            };
-            fetch("https://education4all.herokuapp.com/login", requestOptions)
-            .then(response => {
-                        response.json().then((data) => {
-                              localStorage.token = data.token
-                              data["tup"].profilePic = "https://education4all.herokuapp.com/uploads/" + data["tup"].profilePic
-                              this.setState({
-                                    rawData: data["tup"]
-                              }, () => {
-                                    console.log(this.state.rawData)
-                              })
-                        })
-                  }
-            )
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-      }
 
       render(){
       const { classes } = this.props
@@ -219,7 +201,8 @@ class Profile extends Component{
                               <h2>Personal Info</h2>
                         </div>
                         <div className="about-info">
-                              <Form />
+            
+                             <Form renderData={this.renderData}/>
                         </div>
                   </div>
             </div>

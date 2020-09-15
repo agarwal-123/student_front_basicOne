@@ -5,7 +5,9 @@ import {SUBJECTS,PHYSICS} from '../shared/subjects';
 import Chapter from './ChapterComponent';
 import Videoplayer from './VideoplayerComponent';
 import Query from './queryComponent';
-import Client from './client/client'
+import Client from './client/client';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import Profile from './ProfileComponent';
 import Test from './TestComponent';
 import Testform from './Testform';
@@ -16,16 +18,44 @@ import users from './SVG/users.svg';
 import note from './SVG/bell.svg';
 import contact from './SVG/address-book.svg';
 
-import {getsubject} from '../shared/httpcourses';
-import { getquestion } from '../shared/httptest';
-
 function Navbar(){
+      const [anchorEl, setAnchorEl] = useState(null);
+      const handleClick = (event) => {
+            setAnchorEl(event.currentTarget);
+      };
+        
+      const handleClose = () => {
+            setAnchorEl(null);
+      };
       return (
-            <div>
-                  <div className="header clearfix">
-                        <h1 className="header-primary"><span>Quick</span>study</h1>
-                        <h1 className="header-secondary">Learn Smart</h1>
-                  </div>
+            <div className="navbar">
+                <div className="HeadPart">
+                    <div className="app-description">
+                        <div className="app-logo"><img  src='./assets/logo.png'/></div>
+                        <div className="sep">|</div>
+                        <div className="page-name">PROFILE PAGE</div>
+                    </div>
+                    <div className="buttons">
+                        <div>
+                            <a className="b1" href="#" onClick={handleClick}>My Profile</a>
+                        </div>
+                        <Menu
+                           id="simple-menu"
+                           anchorEl={anchorEl}
+                           keepMounted
+                           aria-controls="customized-menu"
+                           aria-haspopup="true"
+                           getContentAnchorEl={null}
+                           open={Boolean(anchorEl)}
+                           anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                           targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                           onClose={handleClose}
+                        >
+                              <MenuItem onClick={handleClose}>My Profile</MenuItem>
+                              <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        </Menu>
+                    </div>
+                </div>
             </div>
       );
 }
@@ -43,16 +73,6 @@ function Sidebar(){
 
 function Subject(){
 
-
-      const getsub=async()=>{
-            var res = await getsubject();
-            console.log(res);
-      };
-
-      getsub();
-
-
-      
       const subjects=SUBJECTS.map((subject)=>{
             return(
                   <Link className="link" to={`/subject/${subject.name}`}>

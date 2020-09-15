@@ -12,7 +12,7 @@ import Chat from "./chat";
 import axios from "axios";
 import headers from "./headers";
 
-const socket = socketIOClient("https://sgbtech96-chat-server.herokuapp.com/");
+let socket;
 class Client extends Component {
     constructor(props) {
         super(props);
@@ -42,6 +42,8 @@ class Client extends Component {
     }
 
     async componentDidMount() {
+        socket = socketIOClient("https://sgbtech96-chat-server.herokuapp.com/");
+
         console.log("hello",this.state.roomId);
         socket.on("connect", async () => {
             socket.emit("join", {

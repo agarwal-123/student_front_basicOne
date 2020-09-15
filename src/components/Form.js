@@ -11,7 +11,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 
-// import './form.css';
+import {verifyToken} from '../shared/http'
+
 
 const useStyles = theme => ({
     formControl: {
@@ -48,16 +49,33 @@ export class Form extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
         this.allowEdit = this.allowEdit.bind(this)
     }
     
-    componentDidMount() {
+    async componentDidMount() {
+        // console.log(this.props)
         axios.get('https://raw.githubusercontent.com/bhanuc/indian-list/master/state-city.json').then((res) => {
             this.setState({
                 states: Object.keys(res.data),
                 cities: res.data[this.state.obj.State]
             })
         })
+        var obj= await verifyToken()
+        obj.user.profilePic="https://education4all.herokuapp.com/uploads/" +obj.user.profilePic
+        this.props.renderData(obj.user)
+        await this.setState({
+            obj:{
+            FullName: obj.user.name,
+            State: obj.user.state,
+            City: obj.user.city,
+            Board: obj.user.board,
+            Class: obj.user.class,
+            Gender: obj.user.gender
+        }
+        })
+        console.log(this.state.rawData)
+        // this.setState({obj:this.props.rawData})
     }
     handleSubmit(event) {
         event.preventDefault()
@@ -70,6 +88,37 @@ export class Form extends Component {
             console.log(e)
         })
     }
+
+    async handleUpdate(event) {
+        event.preventDefault()
+        var myHeaders = new Headers();
+        myHeaders.append("authorization", "Bearer "+localStorage.token);
+        myHeaders.append("Content-Type", "application/json");        
+        var raw = JSON.stringify({
+            "name":this.state.obj.FullName,
+            "class":this.state.obj.Class,
+            "gender":this.state.obj.Gender,
+            "board":this.state.obj.Board,
+            "city":this.state.obj.City,
+            "state":this.state.obj.State,
+
+        });
+        
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        
+        var res= await fetch("https://education4all.herokuapp.com/editUser", requestOptions)
+        res=await res.json()
+        alert("Successfully Updated !")
+        console.log(res,"gotcha")
+
+
+    }
+
     handleChange(event) {
         const name = event.target.name
         const val = event.target.value
@@ -153,7 +202,7 @@ export class Form extends Component {
                         </RadioGroup>
                     </FormControl>
                     <FormControl>
-                        <Button variant="contained" color="primary" disabled={this.state.temp}>
+                        <Button variant="contained" color="primary" disabled={this.state.temp} onClick={this.handleUpdate}>
                             Update Info
                         </Button>
                     </FormControl>
