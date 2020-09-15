@@ -4,16 +4,18 @@ import Login from './LoginComponent';
 import Main from './MainComponent';
 
 import {verifyToken} from '../shared/http';
-
+import Loader from './Loader';
 
 class Multiplepage extends Component{
 
       constructor(props){
             super(props);
             this.state = {
-                  isVerified: false
+                  isVerified: false,
+                  isLoading: true
             };
             this.changestate=this.changestate.bind(this);
+            this.changeLoading=this.changeLoading.bind(this);
         
       }
 
@@ -24,10 +26,17 @@ class Multiplepage extends Component{
             });
       }
 
+      changeLoading(value){
+            // console.log(value);
+            this.setState({
+                  isLoading: value
+            });
+      }
+
       async componentDidMount(){
             
             //check validity of token
-           
+            await this.setState({isLoading:true})
             if(localStorage.token){
                   var res= await verifyToken()
                   console.log(res,"res")
@@ -35,12 +44,20 @@ class Multiplepage extends Component{
                   else this.setState({isVerified:false})
             }
             else this.setState({isVerified:false})
+
+            await this.setState({isLoading:false})
       }
 
-      render(){           
-            if(!this.state.isVerified){
+      render(){   
+            if(this.state.isLoading){
+                  return (
+                        <Loader/>
+                  );
+            }        
+            else if(!this.state.isVerified){
                   return(      
-                        <Login changestate={this.changestate}/>
+                        <Login changestate={this.changestate} changeLoading={this.changeLoading}/>
+                        // <Loader/>
                   );
             }
             else{
