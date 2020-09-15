@@ -1,7 +1,9 @@
 import React , { Component } from 'react';
+import { Switch, Route, Redirect, NavLink, Link, useHistory} from 'react-router-dom';
 
 import Login from './LoginComponent';
 import Main from './MainComponent';
+import HomeComponent from './HomeComponent';
 
 import {verifyToken} from '../shared/http';
 
@@ -39,8 +41,12 @@ class Multiplepage extends Component{
 
       render(){           
             if(!this.state.isVerified){
-                  return(      
-                        <Login changestate = {this.changestate}/>
+                  return(  
+                        <Switch>
+                              <Route path='/home' component={()=><HomeComponent/>} />
+                              <Route path='/enter' component={()=><Login changestate = {this.changestate}/>} />
+                              <Redirect to="/home"/>
+                        </Switch>                          
                   );
             }
             else{
