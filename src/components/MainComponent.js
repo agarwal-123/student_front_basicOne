@@ -38,7 +38,7 @@ function Navbar(props){
             <div className="HeadPart">
                   
                   <div className="app-description">
-                        <div className="app-logo"><img  src='./assets/logo.png'/></div>
+                        <div className="app-logo"><img className="header-main-logo"  src='./assets/logo-main3.jfif'/></div>
                         <div className="sep">|</div>
                         <div className="page-name">PROFILE PAGE</div>
                   </div>
@@ -74,10 +74,10 @@ function Navbar(props){
 function Sidebar(){
       return (
             <div className="m-sidebar">
-                  <NavLink className="nav-link btt1 wrap"  to='/subject'><img src = {books} /></NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/test'> <img src = {note} /></NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/query'><img src = {home} /></NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/profile'><img src = {users} /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/subject'><img className="svg-image" src = "./assets/undraw_online2.svg" /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/test'> <img className="svg-image" src = "./assets/undraw_speech.svg" /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/query'><img className="svg-image" src = "./assets/undraw_chat.svg" /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/profile'><img className="svg-image" src = "./assets/undraw_profile.svg" /></NavLink>
             </div>
       );
 }
@@ -131,9 +131,14 @@ function Subject(){
       
 
       return(
-            <div className="comp">       
+            <div className="comp">  
+
+                  <div className="header-img clearfix">     
                   
-                  <img className="header-img" src="./assets/book11.jpg"></img>
+                  <img className="header-img1" src="./assets/undraw_professor.svg"></img>
+                  <img className="header-img2" src="./assets/undraw_board.svg"></img>
+                  
+                  </div>
                   <h1>Explore by subjects</h1>
                   
                   <div className="row1 clearfix">
