@@ -4,7 +4,7 @@ html{
 }
 
 .row{
-    width: 1140px;
+    width: 1240px;
     margin: 0 auto;
 }
 
@@ -18,8 +18,10 @@ html{
     height: auto;
     width: 120%;
     background-color: white;
-    margin-left: -140px;
-    height: 420px;
+    margin-top:10%;
+    margin-left: -100px;
+    height: 100%;
+    /* z-index: -100; */
     clip-path: polygon(0% 1%, 47% 0%, 99% 0%, 100% 86%, 88% 94%, 73% 98%, 36% 99%, 18% 92%, 5% 82%, 0% 72%);
 }
 
@@ -58,7 +60,10 @@ html{
 } 
 
 .login-col2 span{
-    color:#00796B;
+    color:#6C63FF;
+    margin-left:10%;
+    font-size: 180%;
+    /* font-weight: ; */
 }
 #name,
 #contactnumber,
@@ -67,22 +72,25 @@ html{
     width: 80%;
     height: 50px;
     border-radius: 10px;
-    margin-left: 10%;
+    margin-left: 17%;
     margin-bottom: 30px;
     border-color: rgb(109, 109, 109);
     font-size: 20px;
+    z-index: 100;
 }
 
 #submit{
     width:150px;
     height: 45px;
     color:#fff;
-    background-color: #00796B;
+    background-color: #6C63FF;
     border-radius: 100px;
     border: none;
-    margin-left: 30%;
+    margin-left: 40%;
     margin-bottom: 5%;
     display: block;
+    font-size:110%;
+    cursor: pointer;
 }
 
 .n-link{
@@ -90,7 +98,23 @@ html{
     text-align: center;
     margin-top: 1%;
     text-decoration: none;
-    color: #00796B;
+    color: #6C63FF;
+    margin-left:16%;
+    font-size:110%;
+}
+
+.n-link:hover{
+    text-decoration: underline;
+}
+
+.n-link-head{
+    display: block;
+    text-align: center;
+    margin-top: 1%;
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.698);
+    margin-left:16%;
+    font-size:90%;
 }
 
 .register{

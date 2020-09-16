@@ -31,7 +31,7 @@ function Votp({input,contactnumber,assignnumber}){
 			<div>Enter "superUser" if OTP not recieved</div>
 			<form onSubmit={handlesubmit}>
 			<input type="text" id="contactnumber" ref={(input)=>myinput.otp=input} placeholder="OTP" required/>
-			<input type="submit" id="submit" placeholder="Verify Otp" required/>
+			<input type="submit" id="submit" placeholder="Verify Otp" required value="Next"/>
 			</form> 
 		</div>    
 	);
@@ -77,7 +77,7 @@ function Register({input,changestate,contactnumber}){
 			<input type="text" id="password" ref={(input)=>myinput.city=input} placeholder="City" required/>
 			<input type="text" id="password" ref={(input)=>myinput.grade=input} placeholder="Grade" required/>
 			<input type="text" id="password" ref={(input)=>myinput.board=input} placeholder="Board" required/>
-			<input type="submit" id="submit" placeholder="Register" required/>
+			<input type="submit" id="submit" placeholder="Register" required value="Register"/>
 		</form>     
 	);
 }
@@ -114,8 +114,9 @@ function SignIn({input,changestate,changeLoading}){
 		<form onSubmit={handlesubmit}>
 			<input type="text" id="contactnumber" ref={(input)=>myinput.num=input} placeholder="Mobile Number" required/>
 			<input type="password" id="password" ref={(input)=>myinput.pass=input} placeholder="Enter Password" required/>
-			<input type="submit" id="submit" placeholder="Login" required/>
-			<NavLink className="nav-link n-link"  to='/signup'>create account</NavLink>
+			<input type="submit" id="submit" placeholder="Login" value="Login" required/>
+			<div className=" n-link-head"> Not Connected Yet ?</div>
+			<NavLink className="nav-link n-link"  to='/signup'>Create Account Now !</NavLink>
 		</form>     
 	);
 }
@@ -141,8 +142,9 @@ function SignUp({input,assignnumber}){
 	return(     
 		<form onSubmit={handlesubmit}>
 			<input type="text" id="contactnumber" ref={(input)=>myinput.num=input} placeholder="Mobile Number" required/>
-			<input type="submit" id="submit" required/>
-			<NavLink className="nav-link n-link"  to='/signin'>signin</NavLink>
+			<input type="submit" id="submit" required value="Next"/>
+			<div className=" n-link-head"> Already Register ?</div>
+			<NavLink className="nav-link n-link"  to='/signin'>Login Here</NavLink>
 		</form>     
 	);
 }
@@ -169,9 +171,9 @@ class Login extends Component{
 		return(
 			<div className="row clearfix">
 			<div className="login-col1">
-				<h1>Welcome to smplified</h1>
-				<h1>online learning</h1>
-				<img src="./assets/student2.jpg" alt="student"></img>
+				{/* <h1>Welcome to smplified</h1>
+				<h1>online learning</h1> */}
+				<img src="./assets/undraw_press_play.svg" alt="student"></img>
 			</div>
 			<div className="login-col2">
 				<h1><span>Quick</span> Study</h1>
