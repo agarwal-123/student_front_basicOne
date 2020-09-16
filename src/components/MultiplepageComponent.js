@@ -19,6 +19,7 @@ class Multiplepage extends Component{
             };
             this.changestate=this.changestate.bind(this);
             this.changeLoading=this.changeLoading.bind(this);
+            this.changeHome=this.changeHome.bind(this);
         
       }
 
@@ -67,9 +68,9 @@ class Multiplepage extends Component{
                         <Main changestate = {this.changestate}/>
                   );
             }      
-            else if(!this.state.isHome){
+            else if(this.state.isHome){
                   return(      
-                        <HomeComponent changeHome={this.changeHome}/>   
+                        <HomeComponent changeHome={this.changeHome} changestate={this.changestate}/>   
                   );
             }
             else{

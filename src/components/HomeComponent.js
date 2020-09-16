@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 
 import "./CSS/Home.css";
 
-export default function HomeComponent() {
+export default function HomeComponent(props) {
       return (
             <div className="h-outer-wrapper">
                   <div className="h-upper-modal">
@@ -16,12 +16,12 @@ export default function HomeComponent() {
 
                   <div className="h-button-group">
                         <div className="h-button1 h-button">
-                              <button className="h-btn h-header__btn">
+                              <button onClick={()=>{props.changeHome(false);}} className="h-btn h-header__btn">
                               Register / Login
                               </button>
                         </div>
                         <div className="h-button2 h-button">
-                              <button className="h-btn h-header__btn">
+                              <button onClick={()=>{props.changestate(true);}} className="h-btn h-header__btn">
                               Login as Guest
                               </button>
                         </div>
@@ -30,8 +30,8 @@ export default function HomeComponent() {
 
                   <div className="h-lower-modal">
 
-                  <div class="u-center-text u-margin-bottom-big">
-                    <h2 class="heading-secondary">
+                  <div className="u-center-text u-margin-bottom-big">
+                    <h2 className="heading-secondary">
                         Developers
                     </h2>
                   </div>
