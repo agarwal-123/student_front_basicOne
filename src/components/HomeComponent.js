@@ -21,7 +21,7 @@ export default function HomeComponent(props) {
                               </button>
                         </div>
                         <div className="h-button2 h-button">
-                              <button onClick={()=>{props.changestate(true);}} className="h-btn h-header__btn">
+                              <button onClick={()=>{props.changestate(true);localStorage.token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjYyMGY5MmIxNDdkYjAwMjQ0MzMzM2MiLCJpYXQiOjE2MDAyNjIwMzR9.c-ff-D5UurJeOke1hql5Yrx9azMJ9sHi9fwOdyekXeU";}} className="h-btn h-header__btn">
                               Login as Guest
                               </button>
                         </div>

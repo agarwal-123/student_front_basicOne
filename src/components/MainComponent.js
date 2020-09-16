@@ -74,10 +74,18 @@ function Navbar(props){
 function Sidebar(){
       return (
             <div className="m-sidebar">
-                  <NavLink className="nav-link btt1 wrap"  to='/subject'><img className="svg-image" src = "./assets/undraw_online2.svg" /></NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/test'> <img className="svg-image" src = "./assets/undraw_speech.svg" /></NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/query'><img className="svg-image" src = "./assets/undraw_chat.svg" /></NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/profile'><img className="svg-image" src = "./assets/undraw_profile.svg" /></NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/subject'>
+                        <img className="svg-image" src = "./assets/undraw_online2.svg" />
+                  </NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/test'> 
+                  <img className="svg-image" src = "./assets/undraw_speech.svg" />
+                  </NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/query'>
+                        <img className="svg-image" src = "./assets/undraw_chat.svg" />
+                  </NavLink>
+                  <NavLink className="nav-link btt1 wrap"  to='/profile'>
+                        <img className="svg-image" src = "./assets/undraw_profile.svg" />
+                  </NavLink>
             </div>
       );
 }
