@@ -83,7 +83,7 @@ function Register({input,changestate,contactnumber}){
 }
 
 
-function SignIn({input,changestate}){
+function SignIn({input,changestate,changeLoading}){
 	
 	const history=useHistory();
 	console.log("hi");
@@ -94,7 +94,7 @@ function SignIn({input,changestate}){
 	}
 
 	const handlesubmit=async (event)=>{
-		
+		changeLoading(true);
 		event.preventDefault();
 
 		var res=await login(myinput.num.value,myinput.pass.value);
@@ -106,6 +106,7 @@ function SignIn({input,changestate}){
 			localStorage.token=res.token;
 			changestate(true);
 		}
+		changeLoading(false)
 	
 	}
   
@@ -175,7 +176,7 @@ class Login extends Component{
 			<div className="login-col2">
 				<h1><span>Quick</span> Study</h1>
 				<Switch>
-					<Route path='/signin' component={()=><SignIn input={this.input} changestate={this.props.changestate}/>} />
+					<Route path='/signin' component={()=><SignIn input={this.input} changestate={this.props.changestate} changeLoading={this.props.changeLoading}/>} />
 					<Route path='/signup' component={()=><SignUp input={this.input} assignnumber={this.assignnumber}/>}/>
 					<Route path='/verifyotp' component={()=><Votp input={this.input} contactnumber={this.state.contactnumber} assignnumber={this.assignnumber}/>}/>
 					<Route path='/register' component={()=><Register input={this.input} changestate={this.props.changestate} contactnumber={this.state.contactnumber}/>}/>

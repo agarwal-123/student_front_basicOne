@@ -16,6 +16,7 @@ import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 
 import {verifyToken} from '../shared/http'
+import Loader from './Loader';
 
 
 const useStyles = theme => ({
@@ -49,7 +50,8 @@ export class Form extends Component {
 			states: [],
 			cities: [],
 			boards: ['HP Board', 'CBSE'],
-			classes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+			classes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			isLoading:true,
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -80,6 +82,7 @@ export class Form extends Component {
 			Gender: obj.user.gender
 		}
 		})
+		this.setState({isLoading:false})
 		console.log(this.state.rawData)
 	}
 	
@@ -157,7 +160,10 @@ export class Form extends Component {
 		const { classes } = this.props
 		const {FullName, State, City, Board, Class, Gender} = this.state.obj
 		const {temp} = this.state
-		
+
+		if(this.state.isLoading) return <Loader/>
+
+		else
 		return (
 			<div className="head-form">
 			<div className="btncls">

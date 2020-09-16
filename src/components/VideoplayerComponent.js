@@ -4,6 +4,8 @@ import Vimeo from '@u-wave/react-vimeo';
 import './CSS/Videoplayer.css';
 import {updateVideoTime,getVideoTime} from '../shared/http'
 
+import Loader from './Loader';
+
 const videos = 
 [
       { 
@@ -49,7 +51,8 @@ class Videoplayer extends Component{
                   videoList:[],
                   progress:{},
                   startTime:0,
-                  timeFetched:0
+                  timeFetched:0,
+                  // isLoading:true,
             };
             this.selectVideo=this.selectVideo.bind(this);
             this.handlePlayerPause=this.handlePlayerPause.bind(this);
@@ -58,7 +61,7 @@ class Videoplayer extends Component{
       }
 
       async selectVideo(index) {
-            
+            // await this.setState({isLoading: true});
             await this.setState({ videoIndex: index });
             await this.setState({ timeFetched: 0 });
             var res= await getVideoTime(videos[this.state.videoIndex].id)
@@ -70,6 +73,7 @@ class Videoplayer extends Component{
 
             else await this.setState({startTime:0})
             await this.setState({timeFetched:1})
+            // await this.setState({isLoading: false});
       }
 
       async handlePlayerPause() {
@@ -87,6 +91,7 @@ class Videoplayer extends Component{
             }
             else await this.setState({startTime:0})
             await this.setState({timeFetched:1})
+            // await this.setState({isLoading: false});
       }
 
 
@@ -105,8 +110,9 @@ class Videoplayer extends Component{
       const { videoIndex } = this.state;
       const video = videos[videoIndex];
       
-      if(this.state.timeFetched!==0){
-            
+      if(this.state.timeFetched==0) return <Loader/>
+
+      else{       
             return (
                   
             <div className="container-video">
@@ -166,7 +172,7 @@ class Videoplayer extends Component{
 
             );
       }
-      else return <div>nk</div>
+      // else return <div>nk</div>
       
       }
 }

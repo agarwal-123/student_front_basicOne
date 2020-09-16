@@ -6,16 +6,19 @@ import Main from './MainComponent';
 import HomeComponent from './HomeComponent';
 
 import {verifyToken} from '../shared/http';
-
+import Loader from './Loader';
 
 class Multiplepage extends Component{
 
       constructor(props){
             super(props);
             this.state = {
-                  isVerified: false
+                  isVerified: false,
+                  isLoading: true,
+                  isHome:false
             };
             this.changestate=this.changestate.bind(this);
+            this.changeLoading=this.changeLoading.bind(this);
         
       }
 
@@ -26,28 +29,52 @@ class Multiplepage extends Component{
             });
       }
 
+      changeLoading(value){
+            // console.log(value);
+            this.setState({
+                  isLoading: value
+            });
+      }
+
+      changeHome(value){
+            this.setState({
+                  isHome: value
+            });
+      }
+
       async componentDidMount(){
             
             //check validity of token
-           
             if(localStorage.token){
                   var res= await verifyToken()
                   console.log(res,"res")
                   if(res.user) this.setState({isVerified:true})
-                  else this.setState({isVerified:false})
+                  else this.setState({isHome:true})
             }
-            else this.setState({isVerified:false})
+            else  this.setState({isHome:true})
+
+            await this.setState({isLoading:false})
       }
 
-      render(){           
-            if(!this.state.isVerified){
-                  return(  
-                        <Login changestate = {this.changestate}/>                 
+      render(){   
+            if(this.state.isLoading){
+                  return (
+                        <Loader/>
+                  );
+            }  
+            else if(this.state.isVerified){
+                  return(      
+                        <Main changestate = {this.changestate}/>
+                  );
+            }      
+            else if(this.state.isHome){
+                  return(      
+                        <HomeComponent changeHome={this.changeHome}/>   
                   );
             }
             else{
-                  return(      
-                        <Main changestate = {this.changestate}/>
+                  return(
+                        <Login changestate={this.changestate} changeLoading={this.changeLoading}/>
                   );
             }            
       }

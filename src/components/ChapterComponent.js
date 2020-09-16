@@ -1,5 +1,6 @@
 import React , { Component} from 'react';
 import {Link} from 'react-router-dom';
+import Loader from './Loader';
 
 import './CSS/Chapter.css';
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
@@ -71,23 +72,27 @@ class Chapter extends Component{
 			selectedTopic:[],
 			selectTopicName:'',
 			allTopics:[],
-			selectedSubject:""
+			selectedSubject:"",
+			isLoading:true,
+			isTopicsLoading:false,
 		};
 		this.selectTopic = this.selectTopic.bind(this);
 	}
 	
 	async selectTopic(index,name) {
-		
+		this.setState({isTopicsLoading:true});
+
 		var temp=[];
 		console.log(index)
 		temp= await fetchSubTopics(this.state.selectedSubject,name)
 		await this.setState({ selectedTopic: temp });
 		await this.setState({selectTopicName:name});
+		this.setState({isTopicsLoading:false});
 		console.log(this.state.selectedTopic,this.state.selectTopicName);
 	}
 
 	async componentDidMount(){
-
+		// this.setState({isLoading:true});
 		var temp=window.location.href
 		var subject=""
 
@@ -97,18 +102,26 @@ class Chapter extends Component{
 		this.setState({selectedSubject:subject})
 		var allTopics=await fetchAllTopics(subject)
 		this.setState({allTopics:allTopics})
+		this.setState({isLoading:false});
 	}
      
       render(){
             
-            const topics = this.state.allTopics.map((user, i) => {
-                  return (
-                        <a onClick={()=>{this.selectTopic(user,user)}}>
-                              <TopicCard details={user}/>
-                        </a>
-                  );
-            });
+		const topics = this.state.allTopics.map((user, i) => {
+				return (
+					<a onClick={()=>{this.selectTopic(user,user)}}>
+							<TopicCard details={user}/>
+					</a>
+				);
+		});
 
+		if(this.state.isLoading){
+			return (
+				<Loader />
+			);
+		}
+
+		else{	
             return(
                   <div className="comp clearfix">
                         
@@ -117,19 +130,32 @@ class Chapter extends Component{
                         </div>
 				
 				<div class="card-container-big"> 
-				{
-					this.state.selectedTopic.map((user,i)=>{
-						if(user.length>18) 
-							user=user.slice(0,18)+"..."
-						return(
-							<SubTopicCard chapter={this.state.selectTopicName} details={user}/>
-						);
-					})
+				{	
+					(() => {
+						if (this.state.isTopicsLoading) {
+						  return (
+							<Loader/>
+						  )
+						} else {
+							return(				
+								this.state.selectedTopic.map((user,i)=>{
+									if(user.length>18) 
+										user=user.slice(0,18)+"..."
+									return(
+										<SubTopicCard chapter={this.state.selectTopicName} details={user}/>
+									);
+								})
+							);
+						}
+					  })()
+
 				}
+				
       			</div>
 				
                   </div>
-            );
+			);
+		}
       }
 }
 
