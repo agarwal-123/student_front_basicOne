@@ -69,8 +69,8 @@ html{
 #contactnumber,
 #password{
     text-align: center;
-    width: 80%;
-    height: 50px;
+    width: 70%;
+    height: 60px;
     border-radius: 10px;
     margin-left: 17%;
     margin-bottom: 30px;
@@ -99,7 +99,7 @@ html{
     margin-top: 1%;
     text-decoration: none;
     color: #6C63FF;
-    margin-left:16%;
+    margin-left:10%;
     font-size:110%;
 }
 
@@ -113,7 +113,7 @@ html{
     margin-top: 1%;
     text-decoration: none;
     color:rgba(0, 0, 0, 0.698);
-    margin-left:16%;
+    margin-left:8%;
     font-size:90%;
 }
 

@@ -143,7 +143,7 @@ function SignUp({input,assignnumber}){
 		<form onSubmit={handlesubmit}>
 			<input type="text" id="contactnumber" ref={(input)=>myinput.num=input} placeholder="Mobile Number" required/>
 			<input type="submit" id="submit" required value="Next"/>
-			<div className=" n-link-head"> Already Register ?</div>
+			<div className=" n-link-head"> Already Registered ?</div>
 			<NavLink className="nav-link n-link"  to='/signin'>Login Here</NavLink>
 		</form>     
 	);

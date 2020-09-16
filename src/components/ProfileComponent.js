@@ -100,7 +100,8 @@ class Profile extends Component{
             
             <label className="dp">
                   <input type="file"  className="fileu" onChange={this.uploadFile} id="myFile" name="filename"/>
-                  <img className="dp_img" src={this.state.rawData.profilePic}></img>
+                  {/* <img className="dp_img" src={this.state.rawData.profilePic}></img> */}
+                  <img className="dp_img" src="../assets/icon-user-default.png"></img> 
             </label>
             
             <div className="details">
