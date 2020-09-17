@@ -162,17 +162,17 @@ export default function HomeComponent(props) {
                               In order to understand recursion, one must first understand recursion. </h3>
                               <div className="clearfix personal-info">
                               <img src='./assets/linkedin.svg' className="linkedin"/>
-                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com/in/raghav-bansal-b10862154/" target="_blank">Raghav Bansal</a></div> 
 
                               <img src='./assets/github-logo.svg' className="linkedin"/>
-                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              <div className="linkedin-text"> <a href="https://github.com/bansalraghav19" target="_blank">Raghav Bansal</a></div> 
                               </div>
                               <br/>
                               <div>
                               <p>
                               <ul>
                                     <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
-                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
+                                    <li>I am also in love with competitive coding. <img src='./assets/codeforces.svg' className="forces"/> <a href="https://codeforces.com/profile/bansalraghav_19">bansalraghav_19</a><img src='./assets/codechef.svg' className="chef"/> <a href="https://www.codechef.com/users/bansalraghav19">bansalraghav19</a></li>
                                     <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
                               </ul>
                               </p>
