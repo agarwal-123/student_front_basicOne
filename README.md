@@ -4,10 +4,12 @@ A single page react app that makes all **educational resources** required for st
 ### Some of the Key Features are-
 1) **Login/Register/Logout** system implemented using **jsonwebtoken**.
 2) **Recorded video lectures** systematically grouped by class and topic, **Vimeo** has been used **for streaming purpose**.
-3) A **customizable** user **profile**.
-4) **Time bound tests**.
-5) End-to-End doubt clearing **chat facility**.
-6) A **great** and easy to **user-experience**.
+3) The **Vimeo** player has been customized such that- quality can adjusted, playing-speed can controlled, your last viewed instant will be tracked, etc. 
+3) A **customizable** user **profile**, with a provision to upload a user profile pic, change password, etc.
+4) **Time bound tests**, the tests are objective in nature, and progress will be saved every instant.
+5) End-to-End doubt clearing **chat facility**, i.e you can communicate personally with the subject admins, with the retrieval of previous chats.
+6) A **great** and easy to use **user-experience**.
+7) Deployed on **Heroku**, and cloud storage of **MongoDB atlas** has been used.
 
 ### Tech stack-
 React, Socket.IO client
