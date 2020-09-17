@@ -56,7 +56,7 @@ export default function HomeComponent(props) {
                               <div className="linkedin-text"> <a href="https://www.linkedin.com/in/dhruva-agarwal-bb78a8137/" target="_blank">Dhruva Agarwal</a></div> 
 
                               <img src='./assets/github-logo.svg' className="linkedin"/>
-                              <div className="linkedin-text"> <a href="github.com/agarwal-123/" target="_blank">Dhruva Agarwal</a></div> 
+                              <div className="linkedin-text"> <a href="https://github.com/agarwal-123/" target="_blank">Dhruva Agarwal</a></div> 
                               </div>
                               <br/>
                               <div>
