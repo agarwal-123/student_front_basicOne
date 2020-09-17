@@ -50,14 +50,24 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    We don't just build websites, we build websites that SELLS
-                              </h3>
+                              I am debugging like a detective in a crime movie where i am also the murderer :P   </h3>
+                              <div className="clearfix personal-info">
+                              <img src='./assets/linkedin.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com/in/dhruva-agarwal-bb78a8137/" target="_blank">Dhruva Agarwal</a></div> 
+
+                              <img src='./assets/github-logo.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="github.com/agarwal-123/" target="_blank">Dhruva Agarwal</a></div> 
+                              </div>
+                              <br/>
+                              <div>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Aperiam, ipsum sapiente aspernatur libero
-                              repellat quis consequatur ducimus quam nisi
-                              exercitationem omnis earum qui. Aperiam, ipsum
+                              <ul>
+                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
+                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
+                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
+                              </ul>
                               </p>
+                              </div>
                         </div>
                   </div>
                   </div>
@@ -76,14 +86,25 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                              We love what we do and we do what our clients love & work with great clients all over the world to create thoughtful and purposeful websites.
+                              I love building and automating useless things because everything is useless until someone use them :)
                               </h3>
+                              <div className="clearfix personal-info">
+                              <img src='./assets/linkedin.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com/in/raushan-kumar-197882179/" target="_blank">Raushan Kumar</a></div> 
+
+                              <img src='./assets/github-logo.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://github.com/raushan303" target="_blank">Raushan Kumar</a></div> 
+                              </div>
+                              <br/>
+                              <div>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Aperiam, ipsum sapiente aspernatur libero
-                              repellat quis consequatur ducimus quam nisi
-                              exercitationem omnis earum qui. Aperiam, ipsum
+                              <ul>
+                                    <li>As a Web Developer with over 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
+                                    <li>I am also in love with competitive coding.  <img src='./assets/codechef.svg' className="chef"/> <a href="https://www.codechef.com/users/raushan303">raushan303</a><img src='./assets/codeforces.svg' className="forces"/> <a href="https://codeforces.com/profile/raushan303">raushan303</a> <img src='./assets/leetcode.svg' className="code"/> <a href="https://leetcode.com/raushan303/">raushan303</a></li>
+                                    <li>Curruntly exploring React-Native and Flutter for a better understanding of mobile applications.</li>
+                              </ul>
                               </p>
+                              </div>
                         </div>
                   </div>
                   </div>
@@ -102,14 +123,24 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    I had the best week ever with my family
-                              </h3>
+                              Dig deeper,then go ahead and fix it.   </h3>
+                              <div className="clearfix personal-info">
+                              <img src='./assets/linkedin.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+
+                              <img src='./assets/github-logo.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              </div>
+                              <br/>
+                              <div>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Aperiam, ipsum sapiente aspernatur libero
-                              repellat quis consequatur ducimus quam nisi
-                              exercitationem omnis earum qui. Aperiam, ipsum
+                              <ul>
+                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
+                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
+                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
+                              </ul>
                               </p>
+                              </div>
                         </div>
                   </div>
                   </div>
@@ -128,14 +159,24 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    I had the best week ever with my family
-                              </h3>
+                              In order to understand recursion, one must first understand recursion. </h3>
+                              <div className="clearfix personal-info">
+                              <img src='./assets/linkedin.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+
+                              <img src='./assets/github-logo.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              </div>
+                              <br/>
+                              <div>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Aperiam, ipsum sapiente aspernatur libero
-                              repellat quis consequatur ducimus quam nisi
-                              exercitationem omnis earum qui. Aperiam, ipsum
+                              <ul>
+                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
+                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
+                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
+                              </ul>
                               </p>
+                              </div>
                         </div>
                   </div>
                   </div>
