@@ -273,6 +273,7 @@
       padding: 0.8%;
       max-height: 60px;
       box-sizing: border-box;
+      align-items: center;
       background-color: #101d2c;
       color: #fff;
 }
