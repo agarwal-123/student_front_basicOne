@@ -140,6 +140,7 @@ export const login = (contactnumber,pass)=>{
 
 
 export const fetchSubTopics = async (subject,topic)=>{
+      subject="Maths" // Temporary
       var res= await fetch(baseurl+"getSubTopics/6/"+subject+"/"+topic)
       res= await res.json()
       console.log(res,"45")
@@ -147,6 +148,7 @@ export const fetchSubTopics = async (subject,topic)=>{
 }
 
 export const fetchAllTopics = async (subject)=>{
+      subject="Maths" // Temporary
       var res= await fetch(baseurl+"getTopics/6/"+subject)
       res= await res.json()
       console.log(res,"sub",subject)
