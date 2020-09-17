@@ -45,7 +45,7 @@ export default function HomeComponent(props) {
                                     className="h-story__img"
                               />
                               <figcaption className="h-story__caption">
-                                    Mary Smith
+                                   Dhruva Agarwal
                               </figcaption>
                         </figure>
                         <div className="h-story__text">
@@ -81,7 +81,7 @@ export default function HomeComponent(props) {
                                     className="h-story__img"
                               />
                               <figcaption className="h-story__caption">
-                                    Mary Smith
+                                    Raushan Kumar
                               </figcaption>
                         </figure>
                         <div className="h-story__text">
