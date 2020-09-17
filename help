@@ -9,3 +9,7 @@
 9. npm install @material-ui/core
 10. npm install @material-ui/icons
 11. npm install @mui-treasury/components
+
+
+git remote set-url origin https://github.com/raushan303/student
+git remote -v
