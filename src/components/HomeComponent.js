@@ -50,14 +50,24 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    I had the best week ever with my family
-                              </h3>
+                              I am debugging like a detective in a crime movie where i am also the murderer :P   </h3>
+                              <div className="clearfix personal-info">
+                              <img src='./assets/linkedin.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+
+                              <img src='./assets/github-logo.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              </div>
+                              <br/>
+                              <div>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Aperiam, ipsum sapiente aspernatur libero
-                              repellat quis consequatur ducimus quam nisi
-                              exercitationem omnis earum qui. Aperiam, ipsum
+                              <ul>
+                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
+                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
+                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
+                              </ul>
                               </p>
+                              </div>
                         </div>
                   </div>
                   </div>
@@ -76,14 +86,25 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    I had the best week ever with my family
+                              I love building and automating useless things because everything is useless until someone use them :)
                               </h3>
+                              <div className="clearfix personal-info">
+                              <img src='./assets/linkedin.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+
+                              <img src='./assets/github-logo.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              </div>
+                              <br/>
+                              <div>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Aperiam, ipsum sapiente aspernatur libero
-                              repellat quis consequatur ducimus quam nisi
-                              exercitationem omnis earum qui. Aperiam, ipsum
+                              <ul>
+                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
+                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
+                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
+                              </ul>
                               </p>
+                              </div>
                         </div>
                   </div>
                   </div>
@@ -102,14 +123,24 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    I had the best week ever with my family
-                              </h3>
+                              Dig deeper,then go ahead and fix it.   </h3>
+                              <div className="clearfix personal-info">
+                              <img src='./assets/linkedin.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+
+                              <img src='./assets/github-logo.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              </div>
+                              <br/>
+                              <div>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Aperiam, ipsum sapiente aspernatur libero
-                              repellat quis consequatur ducimus quam nisi
-                              exercitationem omnis earum qui. Aperiam, ipsum
+                              <ul>
+                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
+                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
+                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
+                              </ul>
                               </p>
+                              </div>
                         </div>
                   </div>
                   </div>
@@ -128,14 +159,24 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    I had the best week ever with my family
-                              </h3>
+                              In order to understand recursion, one must first understand recursion. </h3>
+                              <div className="clearfix personal-info">
+                              <img src='./assets/linkedin.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+
+                              <img src='./assets/github-logo.svg' className="linkedin"/>
+                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              </div>
+                              <br/>
+                              <div>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Aperiam, ipsum sapiente aspernatur libero
-                              repellat quis consequatur ducimus quam nisi
-                              exercitationem omnis earum qui. Aperiam, ipsum
+                              <ul>
+                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
+                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
+                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
+                              </ul>
                               </p>
+                              </div>
                         </div>
                   </div>
                   </div>

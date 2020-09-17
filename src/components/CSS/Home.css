@@ -120,8 +120,8 @@
 }
 
 .h-story__shape {
-      width: 6rem;
-      height: 6rem;
+      width: 7rem;
+      height: 7rem;
       float: left;
       transform: translateX(-5rem) skewX(12deg);
       position: relative;
@@ -131,11 +131,12 @@
 
 .h-story__text {
       transform: skewX(12deg);
+      height: 100%;
 }
 
-.h-story__text p{
-      margin-top: 4%;
-}
+/* .h-story__text p{
+      margin-top: 1%;
+} */
 
 .h-story__img {
       height: 100%;
@@ -175,3 +176,28 @@
       text-transform: uppercase;
 }
 
+.linkedin{
+      margin-top:10px;
+      width:2%;
+      float : left;
+}
+
+.linkedin-text{
+      /* position: relative; */
+      /* margin-top:-20px; */
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-right:80px;
+      float: left;
+      text-decoration: none;
+}
+
+.linkedin-text a{
+      text-decoration: none;
+}
+
+
+.personal-info{
+      height:10%;
+      margin-bottom:10px;
+}
