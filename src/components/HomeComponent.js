@@ -118,7 +118,7 @@ export default function HomeComponent(props) {
                                     className="h-story__img"
                               />
                               <figcaption className="h-story__caption">
-                                    Mary Smith
+                                    Siddhant Gandhi
                               </figcaption>
                         </figure>
                         <div className="h-story__text">
