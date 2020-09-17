@@ -21,7 +21,7 @@ export default function HomeComponent(props) {
                               </button>
                         </div>
                         <div className="h-button2 h-button">
-                              <button onClick={()=>{props.changestate(true);localStorage.token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjYyMGY5MmIxNDdkYjAwMjQ0MzMzM2MiLCJpYXQiOjE2MDAyNjIwMzR9.c-ff-D5UurJeOke1hql5Yrx9azMJ9sHi9fwOdyekXeU";}} className="h-btn h-header__btn">
+                              <button onClick={()=>{props.changestate(true);localStorage.token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjYyMGY5MmIxNDdkYjAwMjQ0MzMzM2MiLCJpYXQiOjE2MDAyNjIwMzR9.c-ff-D5UurJeOke1hql5Yrx9azMJ9sHi9fwOdyekXeU";props.changeHome(false);}} className="h-btn h-header__btn">
                               Login as Guest
                               </button>
                         </div>
@@ -50,7 +50,7 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    I had the best week ever with my family
+                                    We don't just build websites, we build websites that SELLS
                               </h3>
                               <p>
                               Lorem ipsum dolor sit amet consectetur adipisicing
@@ -76,7 +76,7 @@ export default function HomeComponent(props) {
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                                    I had the best week ever with my family
+                              We love what we do and we do what our clients love & work with great clients all over the world to create thoughtful and purposeful websites.
                               </h3>
                               <p>
                               Lorem ipsum dolor sit amet consectetur adipisicing

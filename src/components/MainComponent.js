@@ -62,7 +62,7 @@ function Navbar(props){
                               onClose={handleClose}
                         >
                               <MenuItem onClick={()=>{ handleClose(); history.push("./Profile"); }}>My Profile</MenuItem>
-                              <MenuItem onClick={()=>{ handleClose(); localStorage.removeItem('token'); props.changestate(false) }}>Logout</MenuItem>
+                              <MenuItem onClick={()=>{ handleClose(); localStorage.removeItem('token'); props.changestate(false);}}>Logout</MenuItem>
                         </Menu>
                   
                   </div>
@@ -199,7 +199,7 @@ class Main extends Component{
             return(
 
             <div className="main">
-                  <Navbar changestate={this.props.changestate}/>
+                  <Navbar changestate={this.props.changestate} changeHome={this.props.changeHome}/>
                   <div className="main-container clearfix">
                         <Sidebar/>
                         <div className="side-container">

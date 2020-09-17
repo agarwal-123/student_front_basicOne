@@ -300,18 +300,18 @@
 .app-logo {
       height: 100%;
       margin-left: 12%;
-      width:35%
+      width:45%
 }
 
 .header-main-logo{
-      margin-top: -1%;
+      margin-top: 1%;
       /* margin-left: 8%; */
       width: 65%;
 }
 
 .sep {
       margin-top: -2%;
-      margin-left: 5%;
+      margin-left: 1%;
       transform: scale(2.3);
 }
 

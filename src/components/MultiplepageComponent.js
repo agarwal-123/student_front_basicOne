@@ -75,7 +75,7 @@ class Multiplepage extends Component{
             }
             else{
                   return(
-                        <Login changestate={this.changestate} changeLoading={this.changeLoading}/>
+                        <Login changestate={this.changestate} changeHome={this.changeHome}/>
                   );
             }            
       }
