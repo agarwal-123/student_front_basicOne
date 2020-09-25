@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import "./CSS/Home.css";
 
 export default function HomeComponent(props) {
+
       return (
             <div className="h-outer-wrapper">
                   <div className="h-upper-modal">
@@ -38,16 +39,7 @@ export default function HomeComponent(props) {
 
                   <div className="h-row">
                   <div className="h-story">
-                        <figure className="h-story__shape">
-                              <img
-                                    src="./assets/avt2.png"
-                                    alt="Person on a tour"
-                                    className="h-story__img"
-                              />
-                              <figcaption className="h-story__caption">
-                                   Dhruva Agarwal
-                              </figcaption>
-                        </figure>
+                       
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
                               I am debugging like a detective in a crime movie where i am also the murderer :P   </h3>

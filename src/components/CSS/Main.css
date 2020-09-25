@@ -1,11 +1,102 @@
+/******************************************************/
+/******************* main container *******************/
+/******************************************************/
+
 .main{
       font-family: 'Lato', 'Arial', sans-serif;
       height: 100vh;
       width: 100%;
 }
 
-/****** Header ********/
+/******************************************************/
+/********************** Header ***********************/
+/******************************************************/
 
+
+.navbar {
+      width: 100%;
+      display: flex;
+      padding: 0.8%;
+      max-height: 60px;
+      box-sizing: border-box;
+      background-color: #101d2c;
+      color: #fff;
+}
+
+.HeadPart {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      padding: 0 1%;
+}
+
+.app-description {
+      height: 100%;
+      width:40%;
+      min-width: 25%;
+      display: flex;
+      align-items: center;
+      display: flex;
+      margin-right: auto;
+}
+
+
+.app-logo {
+      height: 100%;
+      margin-left: 12%;
+      width:45%
+}
+
+.header-main-logo{
+      margin-top: 1%;
+      /* margin-left: 8%; */
+      width: 65%;
+}
+
+.sep {
+      margin-top: -2%;
+      margin-left: 1%;
+      transform: scale(2.3);
+}
+
+.page-name {
+      font-weight: 500;
+      font-size: larger;
+      margin-left: 8%;
+      margin-top: -1%;
+}
+
+.buttons {
+      max-width: 30%;
+      min-width: 15%;
+      display: flex;
+      justify-content: space-around;
+}
+
+.b1:link, .b1:visited {
+      font-size: 120%;
+      color: #c69963;
+      display: inline-block;
+      text-decoration: none;
+      border: 1px solid #c69963;
+      padding: 7px;
+      transition: all 0.3s; 
+}
+
+.b1:hover {
+      background-color: #c69963;
+      color: #fff;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px); 
+}
+
+.b1:active {
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      transform: translateY(0); 
+} 
+ 
+/********************** not used******************/
 .header{
       width:100%;
       height: 5%;
@@ -15,6 +106,18 @@
       border-bottom: 1px solid rgb(233, 233, 233);
       font-size: 80%;
 }
+/*************************************************/
+
+
+/******************************************************/
+/****************** Second Container ******************/
+/******************************************************/
+
+
+.main-container{
+      height: 92%;
+      width: 100%;
+}
 
 .clearfix::after {
       content: "";
@@ -22,25 +125,10 @@
       clear: both;
 }
 
-.header-primary,
-.header-secondary{
-      margin-left:2% ;
-}
+/******************************************************/
+/********************** SideBar ***********************/
+/******************************************************/
 
-.header-primary{
-      float: left;
-
-}
-
-.header-secondary{
-      float: left;
-}
-
-
-.main-container{
-      height: 92%;
-      width: 100%;
-}
 
 .m-sidebar{
       background-color: white;
@@ -49,34 +137,6 @@
       height: 100%;
       border-right:  1px solid rgb(233, 233, 233);
       float: left;
-}
-
-.btt1 {
-      margin-top: 20%;
-      text-decoration: none;
-}
-
-.wrap img{
-      transition: all .2s;
-}
-
-.wrap:hover img {
-      transform: scale(1.2);
-}
-
-.wrap {
-      transition: all .2s;
-}
-.wrap:hover {
-      background-color: #fff;
-}
-
-
-.side-container{
-      width: 94.8%;
-      height: 100%;
-      float: left;
-      overflow: hidden;
 }
 
 .m-sidebar .nav-link{
@@ -93,11 +153,60 @@
       justify-content: center;
 }
 
+.btt1 {
+      margin-top: 20%;
+      text-decoration: none;
+}
+
+.wrap {
+      transition: all .2s;
+}
+
+.wrap:hover {
+      background-color: #fff;
+}
+
 .svg-image{
       height: 70%;
       width: 70%;
 }
 
+.wrap img{
+      transition: all .2s;
+}
+
+.wrap:hover img {
+      transform: scale(1.2);
+}
+
+/********************not used******************/
+
+.header-primary,
+.header-secondary{
+      margin-left:2% ;
+}
+.header-primary{
+      float: left;
+
+}
+.header-secondary{
+      float: left;
+}
+
+/***********************************************/
+
+
+
+/******************************************************/
+/****************** Component Container ******************/
+/******************************************************/
+
+.side-container{
+      width: 94.8%;
+      height: 100%;
+      float: left;
+      overflow: hidden;
+}
 
 .comp{
       height: 100%;
@@ -105,12 +214,12 @@
       /* overflow-y: scroll; */
       overflow-x: hidden;
 }
+
 .comp h1{
       font-weight: 500;
       margin-top: 1%;
       margin-left: 3%;
 }
-
 
 .header-img{
       width: 100%;
@@ -119,8 +228,6 @@
 }
 
 .header-img1{
-      /* border-top-left-radius: 30px;
-      border-bottom-left-radius: 30px; */
       width:35%;
       float: left;
       margin-left: 8%;
@@ -130,18 +237,11 @@
 }
 
 .header-img2{
-      /* border-top-left-radius: 30px;
-      border-bottom-left-radius: 30px; */
       width:35%;
       float: left;
       margin-left: 10%;
       margin-top:-2%;
       height: 100%;
-}
-
-.test{
-      margin-top: 10%;
-      margin-left: 10%;
 }
 
 .row1{
@@ -151,11 +251,7 @@
       height: 30%;
       overflow: hidden;
 }
-.main-col3{
-      float: left;
-      margin-top: 1%;
-      margin-right: 5%;
-}
+
 .subject{
       background-color: khaki;
       width: 20%;
@@ -169,6 +265,12 @@
       margin-top: 13%;
       margin-bottom: 13%;
       color: white;
+}
+
+.main-col3{
+      float: left;
+      margin-top: 1%;
+      margin-right: 5%;
 }
 
 .subject .link{
@@ -208,17 +310,18 @@
       transition: all 1.5s;
 }
 
-.main-col4{
-      float: left;
-      margin-right: 0.1%;
-}
-
 .chapter{
       height: 95%;
       width:0.6%;
       background-color: white;
       border-radius:5%;
       text-align: center;
+}
+
+
+.main-col4{
+      float: left;
+      margin-right: 0.1%;
 }
 
 .chapter img{
@@ -267,93 +370,14 @@
 
 }
 
-.navbar {
-      width: 100%;
-      display: flex;
-      padding: 0.8%;
-      max-height: 60px;
-      box-sizing: border-box;
-      background-color: #101d2c;
-      color: #fff;
+
+
+/**********************not used*************/
+.test{
+      margin-top: 10%;
+      margin-left: 10%;
 }
-
-.HeadPart {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      padding: 0 1%;
-}
-
-.app-description {
-      height: 100%;
-      width:40%;
-      min-width: 25%;
-      display: flex;
-      align-items: center;
-      /* justify-content: space-around; */
-      display: flex;
-      margin-right: auto;
-}
-
-
-.app-logo {
-      height: 100%;
-      margin-left: 12%;
-      width:45%
-}
-
-.header-main-logo{
-      margin-top: 1%;
-      /* margin-left: 8%; */
-      width: 65%;
-}
-
-.sep {
-      margin-top: -2%;
-      margin-left: 1%;
-      transform: scale(2.3);
-}
-
-.buttons {
-      max-width: 30%;
-      min-width: 15%;
-      display: flex;
-      justify-content: space-around;
-}
-
-.page-name {
-      font-weight: 500;
-      font-size: larger;
-      margin-left: 8%;
-      margin-top: -1%;
-}
-
-.b1:link, .b1:visited {
-      font-size: 120%;
-      color: #c69963;
-      display: inline-block;
-      text-decoration: none;
-      border: 1px solid #c69963;
-      padding: 7px;
-      transition: all 0.3s; 
-}
-
-.b1:hover {
-      background-color: #c69963;
-      color: #fff;
-      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
-      transform: translateY(-2px); 
-}
-
-.b1:active {
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-      transform: translateY(0); 
-} 
-  
-
-
-
+/*****************************************/
 
 
 
