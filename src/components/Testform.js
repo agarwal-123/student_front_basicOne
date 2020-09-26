@@ -116,30 +116,30 @@ export class Testform extends Component {
 
 	if(this.state.isfinish){
 		return(
-			<div className="t-wrapper">
-				<div className="t-container-s">
-                              <h1 className="t-title">Performance Card</h1>
-                              <h3 className="t-result">No of attempted question - {total} </h3>
-                              <h3 className="t-result">No of right attempt - {correct}</h3>
-                              <h3 className="t-result">No of wrong attempt - {total-correct}</h3>
-                              <h3 className="t-result">No of skip - {skip}</h3>
-                              <button className="t-finish" onClick={this.handlefinish}>Finish</button>
+			<div className="test-wrapper">
+				<div className="test-container-s">
+                              <h1 className="test-title">Performance Card</h1>
+                              <h3 className="test-result">No of attempted question - {total} </h3>
+                              <h3 className="test-result">No of right attempt - {correct}</h3>
+                              <h3 className="test-result">No of wrong attempt - {total-correct}</h3>
+                              <h3 className="test-result">No of skip - {skip}</h3>
+                              <button className="test-finish" onClick={this.handlefinish}>Finish</button>
 				</div>
 			</div>	
 		);
 	}
 	else{
 		return (
-			<div className="t-wrapper">
-			<div className="t-container">
+			<div className="test-wrapper">
+			<div className="test-container">
 
-				<div className="t-question">
+				<div className="test-question">
 					<h3>{this.state.i+1}. {" "}{questions[this.state.i].question}</h3>
                         </div>
 				
-				<div className="t-option">
-					<div onClick={()=>this.setthis2('1')} className="t-check clearfix">
-					<div className="t-radio">
+				<div className="test-option">
+					<div onClick={()=>this.setthis2('1')} className="test-check clearfix">
+					<div className="test-radio">
 					<Radio
 						checked={this.state.activeButton === '1'}
 						onChange={this.setthis}
@@ -148,15 +148,15 @@ export class Testform extends Component {
 						inputProps={{ 'aria-label': 'A' }}
       				/>
 					</div>
-					<div className="t-h3">
+					<div className="test-h3">
 						<h3 >{questions[this.state.i].op1}</h3>
 					</div>
 					</div>
                         </div>
 				
-				<div className="t-option">
-					<div onClick={()=>this.setthis2('2')} className="t-check clearfix">
-					<div className="t-radio">
+				<div className="test-option">
+					<div onClick={()=>this.setthis2('2')} className="test-check clearfix">
+					<div className="test-radio">
 					<Radio
 						checked={this.state.activeButton === '2'}
 						onChange={this.setthis}
@@ -165,15 +165,15 @@ export class Testform extends Component {
 						inputProps={{ 'aria-label': 'A' }}
       				/>
 					</div>
-					<div className="t-h3">
+					<div className="test-h3">
 						<h3 >{questions[this.state.i].op2}</h3>
 					</div>
 					</div>
                         </div>
 				
-				<div className="t-option">
-					<div onClick={()=>this.setthis2('3')} className="t-check clearfix">
-					<div className="t-radio">
+				<div className="test-option">
+					<div onClick={()=>this.setthis2('3')} className="test-check clearfix">
+					<div className="test-radio">
 					<Radio
 						checked={this.state.activeButton === '3'}
 						onChange={this.setthis}
@@ -182,15 +182,15 @@ export class Testform extends Component {
 						inputProps={{ 'aria-label': 'A' }}
       				/>
 					</div>
-					<div className="t-h3">
+					<div className="test-h3">
 						<h3 >{questions[this.state.i].op3}</h3>
 					</div>
 					</div>
                         </div>
 				
-				<div className="t-option">
-					<div onClick={()=>this.setthis2('4')} className="t-check clearfix">
-					<div className="t-radio">
+				<div className="test-option">
+					<div onClick={()=>this.setthis2('4')} className="test-check clearfix">
+					<div className="test-radio">
 					<Radio
 						checked={this.state.activeButton === '4'}
 						onChange={this.setthis}
@@ -199,7 +199,7 @@ export class Testform extends Component {
 						inputProps={{ 'aria-label': 'A' }}
       				/>
 					</div>
-					<div className="t-h3">
+					<div className="test-h3">
 						<h3 >{questions[this.state.i].op4}</h3>
 					</div>
 					</div>
@@ -207,13 +207,13 @@ export class Testform extends Component {
                         
 				{
                               !this.state.attempt?
-                                    <div className="t-option">
-                                    <button className="t-btn-skip" onClick={()=>{this.skip();}}><h3>Skip</h3></button>
-                                    <button className="t-btn-submit" onClick={()=>{this.submit();}}><h3>Submit</h3></button>
+                                    <div className="test-option">
+                                    <button className="test-btn-skip" onClick={()=>{this.skip();}}><h3>Skip</h3></button>
+                                    <button className="test-btn-submit" onClick={()=>{this.submit();}}><h3>Submit</h3></button>
                                     </div>
                               :
-                                    <div className="t-option">
-                                    <button className="t-btn-continue" onClick={()=>{this.continue();}}><h3>Continue</h3></button>
+                                    <div className="test-option">
+                                    <button className="test-btn-continue" onClick={()=>{this.continue();}}><h3>Continue</h3></button>
                                     </div>
                         }
                   
@@ -221,7 +221,7 @@ export class Testform extends Component {
 
                         {
 					this.state.curshow?
-					<div className="t-answer">
+					<div className="test-answer">
 							<h3>{questions[this.state.i].ans}</h3>
 							<br/>
 							<h3>{questions[this.state.i].note}</h3>

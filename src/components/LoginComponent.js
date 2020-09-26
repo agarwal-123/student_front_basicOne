@@ -30,8 +30,8 @@ function Votp({input,contactnumber,assignnumber}){
 		<div>
 			<div>Enter "superUser" if OTP not recieved</div>
 			<form onSubmit={handlesubmit}>
-			<input type="text" id="contactnumber" ref={(input)=>myinput.otp=input} placeholder="OTP" required/>
-			<input type="submit" id="submit" placeholder="Verify Otp" required value="Next"/>
+			<input type="text" id="login-contactnumber" ref={(input)=>myinput.otp=input} placeholder="OTP" required/>
+			<input type="submit" id="login-submit" placeholder="Verify Otp" required value="Next"/>
 			</form> 
 		</div>    
 	);
@@ -69,15 +69,15 @@ function Register({input,changestate,contactnumber}){
 	
 	return(
 		<form className="register" onSubmit={handlesubmit}>
-			<input type="text" id="contactnumber" ref={(input)=>myinput.fname=input} placeholder="First Name" required/>
-			<input type="text" id="password" ref={(input)=>myinput.lname=input} placeholder="Last Name" required/>
-			<input type="password" id="password" ref={(input)=>myinput.pass=input} placeholder="Password" required/>
-			<input type="text" id="password" ref={(input)=>myinput.email=input} placeholder="Email Id" required/>
-			<input type="text" id="password" ref={(input)=>myinput.state=input} placeholder="State" required/>
-			<input type="text" id="password" ref={(input)=>myinput.city=input} placeholder="City" required/>
-			<input type="text" id="password" ref={(input)=>myinput.grade=input} placeholder="Grade" required/>
-			<input type="text" id="password" ref={(input)=>myinput.board=input} placeholder="Board" required/>
-			<input type="submit" id="submit" placeholder="Register" required value="Register"/>
+			<input type="text" id="login-firstname" ref={(input)=>myinput.fname=input} placeholder="First Name" required/>
+			<input type="text" id="login-lastname" ref={(input)=>myinput.lname=input} placeholder="Last Name" required/>
+			<input type="password" id="login-password" ref={(input)=>myinput.pass=input} placeholder="Password" required/>
+			<input type="text" id="login-emailid" ref={(input)=>myinput.email=input} placeholder="Email Id" required/>
+			<input type="text" id="login-state" ref={(input)=>myinput.state=input} placeholder="State" required/>
+			<input type="text" id="login-city" ref={(input)=>myinput.city=input} placeholder="City" required/>
+			<input type="text" id="login-grade" ref={(input)=>myinput.grade=input} placeholder="Grade" required/>
+			<input type="text" id="login-board" ref={(input)=>myinput.board=input} placeholder="Board" required/>
+			<input type="submit" id="login-submit" placeholder="Register" required value="Register"/>
 		</form>     
 	);
 }
@@ -86,7 +86,6 @@ function Register({input,changestate,contactnumber}){
 function SignIn({input,changestate,changeLoading}){
 	
 	const history=useHistory();
-	console.log("hi");
 
 	const myinput = {
 		num:'',
@@ -112,11 +111,11 @@ function SignIn({input,changestate,changeLoading}){
   
 	return(
 		<form onSubmit={handlesubmit}>
-			<input type="text" id="contactnumber" ref={(input)=>myinput.num=input} placeholder="Mobile Number" required/>
-			<input type="password" id="password" ref={(input)=>myinput.pass=input} placeholder="Enter Password" required/>
-			<input type="submit" id="submit" placeholder="Login" value="Login" required/>
-			<div className=" n-link-head"> Not Connected Yet ?</div>
-			<NavLink className="nav-link n-link"  to='/signup'>Create Account Now !</NavLink>
+			<input type="text" id="login-contactnumber" ref={(input)=>myinput.num=input} placeholder="Mobile Number" required/>
+			<input type="password" id="login-password" ref={(input)=>myinput.pass=input} placeholder="Enter Password" required/>
+			<input type="submit" id="login-submit" placeholder="Login" value="Login" required/>
+			<div className="login-text"> Not Connected Yet ?</div>
+			<NavLink className="nav-link login-nav-link"  to='/signup'>Create Account Now !</NavLink>
 		</form>     
 	);
 }
@@ -141,10 +140,10 @@ function SignUp({input,assignnumber}){
 
 	return(     
 		<form onSubmit={handlesubmit}>
-			<input type="text" id="contactnumber" ref={(input)=>myinput.num=input} placeholder="Mobile Number" required/>
-			<input type="submit" id="submit" required value="Next"/>
-			<div className=" n-link-head"> Already Registered ?</div>
-			<NavLink className="nav-link n-link"  to='/signin'>Login Here</NavLink>
+			<input type="text" id="login-contactnumber" ref={(input)=>myinput.num=input} placeholder="Mobile Number" required/>
+			<input type="submit" id="login-submit" required value="Next"/>
+			<div className="login-text"> Already Registered ?</div>
+			<NavLink className="nav-link login-nav-link"  to='/signin'>Login Here</NavLink>
 		</form>     
 	);
 }
@@ -169,13 +168,11 @@ class Login extends Component{
 	
 	render(){
 		return(
-			<div className="row clearfix">
-			<div className="login-col1">
-				{/* <h1>Welcome to smplified</h1>
-				<h1>online learning</h1> */}
+			<div className="login-container clearfix">
+			<div className="login-first-col">
 				<img src="./assets/undraw_press_play.svg" alt="student"></img>
 			</div>
-			<div className="login-col2">
+			<div className="login-second-col">
 				<h1><span>Quick</span> Study</h1>
 				<Switch>
 					<Route path='/signin' component={()=><SignIn input={this.input} changestate={this.props.changestate} changeLoading={this.props.changeLoading}/>} />

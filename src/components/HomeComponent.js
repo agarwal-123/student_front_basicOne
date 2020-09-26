@@ -39,6 +39,16 @@ export default function HomeComponent(props) {
 
                   <div className="h-row">
                   <div className="h-story">
+                        <figure className="h-story__shape">
+                              <img
+                                    src="./assets/avt2.png"
+                                    alt="Person on a tour"
+                                    className="h-story__img"
+                              />
+                              <figcaption className="h-story__caption">
+                                    Dhruv agarwal
+                              </figcaption>
+                        </figure>
                        
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">

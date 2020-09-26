@@ -1,10 +1,23 @@
-.container-video {
+.clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+}
+
+/******************************************************/
+/***************** Component-container ****************/
+/******************************************************/
+
+.vid-component-container {
       height: 100%;
       width: 100%;
 }
 
+/******************************************************/
+/******************* video-container ******************/
+/******************************************************/
 
-.video{
+.vid-video-container{
       float:left;
       width:65%;
       height:100%;
@@ -13,15 +26,28 @@
       overflow-y: scroll;
 }
 
-.vimeo{
+.vid-video-vimeo-container{
       height: 78%;
       width: 95%;
       margin-left: 4%;
       margin-top: 4%;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0; overflow: hidden;
+      max-width: 100%; height: auto;
 }
 
+.vid-video-vimeo-container iframe, 
+.vid-video-vimeo-container object, 
+.vid-video-vimeo-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+}
 
-.main-text{
+.vid-video-content{
       width: 95%;
       margin-top: 15px;
       margin-left: 4%;
@@ -31,7 +57,11 @@
       box-shadow:rgba(0, 0, 0, 0.2) 0px 6px 10px 0px;
 }
 
-.other-videos{
+/******************************************************/
+/**************** other-video-container ***************/
+/******************************************************/
+
+.vid-other-videos-container{
       float:left;
       width:32.2%;
       height:100%;
@@ -40,17 +70,7 @@
       margin-left: 1%;
 }
 
-.other-videos a{
-      text-decoration:none;
-      color:black;
-}
-
-.other:hover{
-      width:88%;
-      margin-left: 3%;
-}
-
-.other{
+.vid-other-videos{
       width:85%;
       height: 25%;
       margin-top: 8%;
@@ -63,7 +83,12 @@
      
 }
 
-.other img{
+.vid-other-videos:hover{
+      width:88%;
+      margin-left: 3%;
+}
+
+.vid-other-videos img{
       width:50% ;
       height: 70%;
       margin-left:4%;
@@ -72,7 +97,7 @@
       float:left;
 }
 
-.other-text{
+.vid-other-videos-text{
       float: left;
       width:40%;
       height: 100%;
@@ -80,26 +105,6 @@
       margin-top: 8%;
 
 }
-
-.clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
-}
-
-.vimeo {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0; overflow: hidden;
-      max-width: 100%; height: auto;
-  }
-  .vimeo iframe, .vimeo object, .vimeo embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-  }
 
 
 

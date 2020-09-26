@@ -20,8 +20,6 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
             height:"100%",
             overflow: 'initial',
             background: '#ffffff',
-            // display: 'flex',
-            // flexDirection: 'column',
             alignItems: 'center',
             paddingBottom: spacing(2),
             [breakpoints.up('md')]: {
@@ -84,7 +82,7 @@ function BlogCardDemo(props){
                         heading={props.sub}
                         body={props.content}
                   />
-                  <Button button onClick={props.handlesubmit} name={props.sub} className={buttonStyles}>Submit</Button>
+                  <Button button onClick={()=>props.handlesubmit(props.sub)} className={buttonStyles}>Submit</Button>
             </CardContent>
       </Card>
       );

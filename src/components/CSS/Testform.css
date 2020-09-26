@@ -1,10 +1,8 @@
-.clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
-}
+/******************************************************/
+/************ test Wrapper and Container **************/
+/******************************************************/
 
-.t-wrapper{
+.test-wrapper{
       height: 100%;
       width: 100%;
       background-color: #eee; 
@@ -15,7 +13,7 @@
       overflow-y: scroll;
 }
 
-.t-container{
+.test-container{
       background-color: white;
       margin-left: 30%;
       margin-top: 2.5%;
@@ -28,7 +26,11 @@
       border:2px solid #009688;
 }
 
-.t-question{     
+/******************************************************/
+/********************** Test Form *********************/
+/******************************************************/
+
+.test-question{     
       width:100%;
       height: 22%;
       margin-top: 4%;
@@ -39,7 +41,7 @@
       padding: 5%;
 }
 
-.t-option{
+.test-option{
       height: 13.2%;
       width:100%;
       border-bottom:0.9px solid #009688;
@@ -47,26 +49,26 @@
       border-bottom-right-radius: 50px;
 }
 
-.t-option:last-child{
+.test-option:last-child{
       border:none;
       height: 19%;
 }
 
-.t-check{
+.test-check{
       height: 100%;
       width: 100%;
       background-color: white;
       cursor: pointer;
 }
 
-.t-check:hover{
+.test-check:hover{
     background-color: rgb(240, 240, 240);
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
 
 }
 
-.t-radio{
+.test-radio{
       float: left;
       margin-left:12%;
       margin-top: 2%;
@@ -74,22 +76,22 @@
       height: 80%;
 }
 
-.t-h3{
+.test-h3{
       float: left;
       margin-left:6%;
       margin-top: 4%;
       width: 70%;
       height: 71%;
-     
 }
 
-
-h3{
+.test-question h3,
+.test-answer h3,
+.test-h3 h3{
       font-weight: 500;
 }
 
-.t-btn-skip,
-.t-btn-submit{
+.test-btn-skip,
+.test-btn-submit{
       border:none;
       height: 40%;
       width: 25%;
@@ -97,15 +99,15 @@ h3{
       margin-top: 6%;
 }
 
-.t-btn-skip{
+.test-btn-skip{
       margin-left: 14%;
 }
 
-.t-btn-submit{
+.test-btn-submit{
       margin-left: 22%;
 }
 
-.t-btn-continue{
+.test-btn-continue{
       margin-left: 10%;
       border:none;
       height: 40%;
@@ -114,7 +116,7 @@ h3{
       margin-top: 6%;
 }
 
-.t-answer{
+.test-answer{
       background-color: white;
       margin-left: 30%;
       margin-top: 3%;
@@ -129,11 +131,11 @@ h3{
       border:2px solid #009688;
       text-align: center;
 }
-.t-answer h3{
+.test-answer h3{
      font-size: 100%;
 }
 
-.t-container-s{
+.test-container-s{
       background-color: white;
       margin-left: 30%;
       margin-top: 9%;
@@ -145,18 +147,19 @@ h3{
       background-color:white;
 }
 
-.t-title{
+.test-title{
       margin-left: 20%;
       margin-top: 5%;
       display: inline-block;
 }
 
-.t-result{
+.test-result{
       margin-left: 20%;
       margin-top: 5%;
+      font-weight: 500;
 }
 
-.t-finish{
+.test-finish{
       border: none;
       cursor: pointer;
       width:60%;

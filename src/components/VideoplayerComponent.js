@@ -115,12 +115,11 @@ class Videoplayer extends Component{
       else{       
             return (
                   
-            <div className="container-video">
-      
-            <div className="video">
+            <div className="vid-component-container">
+            <div className="vid-video-container">
 
-                  <div className="main-video ">
-                  <div class="vimeo">
+                  
+                  <div class="vid-video-vimeo-container">
                   
                   <Vimeo
                         video={video.id}
@@ -138,9 +137,8 @@ class Videoplayer extends Component{
                   />
 
                   </div>
-                  </div>
 
-                  <p className="main-text"> 
+                  <p className="vid-video-content"> 
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
                   took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
@@ -149,30 +147,29 @@ class Videoplayer extends Component{
             
             </div>
       
-            <div className="other-videos">
-            <div className="collection">
+            <div className="vid-other-videos-container">
             
             {
                   videos.map((choice, index) => (
                   <a
                         href={`#!/video/${index}`}
-                        className={`other clearfix collection-item ${video === choice ? 'active' : ''}`}
+                        className={`${video === choice ? 'active' : ''}`}
                         onClick={() => this.selectVideo(index)}
                   >
-                        <img src={choice.image} />
-                        <div class="other-text">{choice.name}</div>
+                        <div className="vid-other-videos clearfix">
+                              <img src={choice.image} />
+                              <div class="vid-other-videos-text">{choice.name}</div>
+                        </div>
                   </a>
                   ))
             }
 
-            </div>
             </div>
       
             </div>
 
             );
       }
-      // else return <div>nk</div>
       
       }
 }

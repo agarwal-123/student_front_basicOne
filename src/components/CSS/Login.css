@@ -1,55 +1,43 @@
+/******************************************************/
+/**************** Component Container *****************/
+/******************************************************/
 
-html{
-    font-size: 20px;
-}
-
-.row{
+.login-container{
     height: 100vh;
     width: 100%;
 }
 
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
-.login-col1{
+/******************************************************/
+/****************** Image Container *******************/
+/******************************************************/
+
+.login-first-col{
     width: 60%;
     height: 80%;
     float: left;
 }
 
-.login-col2{
-    width: 30%;
-    float: left;
-    margin-top: 8%;
-}
-
-
-.login-col1 img{
+.login-first-col img{
     height: auto;
     width: 100%;
     background-color: white;
     margin-top:5%;
     height: 100%;
-    /* clip-path: polygon(0% 1%, 47% 0%, 99% 0%, 100% 86%, 88% 94%, 73% 98%, 36% 99%, 18% 92%, 5% 82%, 0% 72%); */
 }
 
 
+/******************************************************/
+/****************** Form Container ********************/
+/******************************************************/
 
-.login-col1 h1{
-    font-family: 'Lato', 'Arial', sans-serif;
-    text-align: center;
-    padding: 5px;
-    font-size: 190%;
-    font-weight: 700;
-    word-spacing: 1px;
-    letter-spacing: 1px;
+.login-second-col{
+    width: 30%;
+    float: left;
+    margin-top: 8%;
 }
 
-
-.login-col2 h1{
+.login-second-col h1{
     font-family: 'Lato', 'Arial', sans-serif;
     text-align: center;
     padding: 1%;
@@ -60,14 +48,23 @@ html{
     margin-bottom: 5%;
 } 
 
-.login-col2 span{
+.login-second-col span{
     color:#6C63FF;
     margin-left:10%;
     font-size: 180%;
 }
-#name,
-#contactnumber,
-#password{
+
+
+#login-contactnumber,
+#login-password,
+#login-firstname,
+#login-lastname,
+#login-city,
+#login-emailid,
+#login-state,
+#login-grade,
+#login-board
+{
     text-align: center;
     width: 70%;
     height: 60px;
@@ -79,7 +76,7 @@ html{
     z-index: 100;
 }
 
-#submit{
+#login-submit{
     width:150px;
     height: 45px;
     color:#fff;
@@ -93,7 +90,17 @@ html{
     cursor: pointer;
 }
 
-.n-link{
+.login-text{
+    display: block;
+    text-align: center;
+    margin-top: 1%;
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.698);
+    margin-left:8%;
+    font-size:90%;
+}
+
+.login-nav-link{
     display: block;
     text-align: center;
     margin-top: 1%;
@@ -103,18 +110,8 @@ html{
     font-size:110%;
 }
 
-.n-link:hover{
+.login-nav-link:hover{
     text-decoration: underline;
-}
-
-.n-link-head{
-    display: block;
-    text-align: center;
-    margin-top: 1%;
-    text-decoration: none;
-    color:rgba(0, 0, 0, 0.698);
-    margin-left:8%;
-    font-size:90%;
 }
 
 *:focus {outline: none;}

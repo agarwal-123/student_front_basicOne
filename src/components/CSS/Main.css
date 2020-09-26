@@ -1,8 +1,8 @@
 /******************************************************/
-/******************* main container *******************/
+/************** Main full page container ***************/
 /******************************************************/
 
-.main{
+.main-full-page-container{
       font-family: 'Lato', 'Arial', sans-serif;
       height: 100vh;
       width: 100%;
@@ -13,17 +13,16 @@
 /******************************************************/
 
 
-.navbar {
+.main-navbar-container{
       width: 100%;
-      display: flex;
       padding: 0.8%;
-      max-height: 60px;
+      height: 9%;
       box-sizing: border-box;
       background-color: #101d2c;
       color: #fff;
 }
 
-.HeadPart {
+.main-navbar-inner-container{
       display: flex;
       width: 100%;
       height: 100%;
@@ -31,7 +30,7 @@
       padding: 0 1%;
 }
 
-.app-description {
+.main-navbar-content{
       height: 100%;
       width:40%;
       min-width: 25%;
@@ -42,39 +41,39 @@
 }
 
 
-.app-logo {
+.main-app-logo {
       height: 100%;
       margin-left: 12%;
       width:45%
 }
 
-.header-main-logo{
+.main-app-logo img{
       margin-top: 1%;
-      /* margin-left: 8%; */
       width: 65%;
 }
 
-.sep {
+.main-sep {
       margin-top: -2%;
       margin-left: 1%;
       transform: scale(2.3);
 }
 
-.page-name {
+.main-page-name {
       font-weight: 500;
       font-size: larger;
       margin-left: 8%;
       margin-top: -1%;
 }
 
-.buttons {
+.main-menu-buttons{
       max-width: 30%;
       min-width: 15%;
       display: flex;
       justify-content: space-around;
 }
 
-.b1:link, .b1:visited {
+.main-menu-title:link,
+.main-menu-title:visited {
       font-size: 120%;
       color: #c69963;
       display: inline-block;
@@ -84,29 +83,17 @@
       transition: all 0.3s; 
 }
 
-.b1:hover {
+.main-menu-title:hover {
       background-color: #c69963;
       color: #fff;
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px); 
 }
 
-.b1:active {
+.main-menu-title:active {
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
       transform: translateY(0); 
 } 
- 
-/********************** not used******************/
-.header{
-      width:100%;
-      height: 5%;
-      /* background-color: #101d2c; */
-      background-color: rgb(255, 255, 255);
-      padding: 1%;
-      border-bottom: 1px solid rgb(233, 233, 233);
-      font-size: 80%;
-}
-/*************************************************/
 
 
 /******************************************************/
@@ -115,14 +102,8 @@
 
 
 .main-container{
-      height: 92%;
+      height: 91%;
       width: 100%;
-}
-
-.clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
 }
 
 /******************************************************/
@@ -130,7 +111,7 @@
 /******************************************************/
 
 
-.m-sidebar{
+.main-sidebar{
       background-color: white;
       /* background-color: #c69963; */
       width: 5%;
@@ -139,7 +120,7 @@
       float: left;
 }
 
-.m-sidebar .nav-link{
+.main-sidebar-svg-image-container{
       margin-bottom: 20px;
       display: block;
       text-decoration: none;
@@ -151,83 +132,62 @@
       display: flex;
       align-items: center;
       justify-content: center;
-}
-
-.btt1 {
       margin-top: 20%;
       text-decoration: none;
-}
-
-.wrap {
       transition: all .2s;
 }
 
-.wrap:hover {
+.main-sidebar-svg-image-container:hover {
       background-color: #fff;
 }
 
-.svg-image{
+.main-sidebar-svg-image-container img{
+      transition: all .2s;
+}
+
+.main-sidebar-svg-image-container:hover img {
+      transform: scale(1.2);
+}
+
+.main-svg-image{
       height: 70%;
       width: 70%;
 }
 
-.wrap img{
-      transition: all .2s;
-}
-
-.wrap:hover img {
-      transform: scale(1.2);
-}
-
-/********************not used******************/
-
-.header-primary,
-.header-secondary{
-      margin-left:2% ;
-}
-.header-primary{
-      float: left;
-
-}
-.header-secondary{
-      float: left;
-}
-
-/***********************************************/
-
-
-
 /******************************************************/
-/****************** Component Container ******************/
+/**************** Component Container *****************/
 /******************************************************/
 
-.side-container{
+.main-component-container{
       width: 94.8%;
       height: 100%;
       float: left;
       overflow: hidden;
 }
 
-.comp{
+/******************************************************/
+/***************** Subject Container ******************/
+/******************************************************/
+
+.sub-component-container{
       height: 100%;
       width:100%;
-      /* overflow-y: scroll; */
       overflow-x: hidden;
 }
 
-.comp h1{
+.sub-component-container h1{
       font-weight: 500;
       margin-top: 1%;
       margin-left: 3%;
 }
 
-.header-img{
+.sub-header-img-container{
       width: 100%;
       height: 70vh;
       margin-bottom: 1%;
 }
 
-.header-img1{
+.sub-header-img-first{
       width:35%;
       float: left;
       margin-left: 8%;
@@ -236,7 +196,7 @@
      
 }
 
-.header-img2{
+.sub-header-img-second{
       width:35%;
       float: left;
       margin-left: 10%;
@@ -244,7 +204,7 @@
       height: 100%;
 }
 
-.row1{
+.sub-subject-container{
       margin-top: 3%;
       margin-left: 3%;
       width:100%;
@@ -252,29 +212,29 @@
       overflow: hidden;
 }
 
-.subject{
+.sub-subject{
       background-color: khaki;
       width: 20%;
       height:50% ;
       border-bottom-left-radius: 10px;
       border-top-left-radius: 10px;
       text-align: center;
-}
-
-.subject h3{
-      margin-top: 13%;
-      margin-bottom: 13%;
-      color: white;
-}
-
-.main-col3{
       float: left;
       margin-top: 1%;
       margin-right: 5%;
 }
 
-.subject .link{
-      text-decoration: none;
+.sub-subject h3{
+      margin-top: 13%;
+      margin-bottom: 13%;
+      color: white;
+}
+
+
+@media only screen and (max-width: 600px) {
+      .main-col3{
+            float: none; 
+      } 
 }
 
 #sub0{
@@ -293,7 +253,7 @@
       background-color:#22a6b3;
 }
 
-.row2{
+.sub-chapter-container{
       width: 100%;
       height: 67%;
       overflow: hidden;
@@ -301,7 +261,7 @@
       position: relative;
 }
 
-.chapters{
+.sub-chapter-inner-container{
       margin-top: 5%;
       margin-left: 5%;
       width: 4200%;
@@ -310,33 +270,30 @@
       transition: all 1.5s;
 }
 
-.chapter{
+.sub-chapter{
       height: 95%;
       width:0.6%;
       background-color: white;
       border-radius:5%;
       text-align: center;
-}
-
-
-.main-col4{
       float: left;
       margin-right: 0.1%;
 }
 
-.chapter img{
+
+.sub-chapter img{
       width:80%;
       height: 50%;
       margin-top: 10%;
 }
 
-.chapter h3{
+.sub-chapter h3{
       font-size: 100%;
       font-weight: 700;
       margin-top: 2%;
 }
 
-.newrow h4{
+.sub-chapter-content h4{
       font-weight: 500;
       font-size: 80%;
       float: left;
@@ -344,7 +301,7 @@
       margin-top: 6%;
 }
 
-.first-button{
+.sub-left-slider{
       position: absolute;
       border: none;
       margin-top:-13%;
@@ -352,7 +309,7 @@
       cursor: pointer;
 }
 
-.second-button{
+.sub-right-slider{
       position: absolute;
       border: none;
       margin-top:-13%;
@@ -360,25 +317,15 @@
       cursor: pointer;
 }
 
-.first-button img{
+.sub-left-slider img{
       height: 10%;
       width: 50px;
 }
-.second-button img{
+.sub-right-slider img{
       height: 10%;
       width: 50px;
 
 }
-
-
-
-/**********************not used*************/
-.test{
-      margin-top: 10%;
-      margin-left: 10%;
-}
-/*****************************************/
-
 
 
 /******************************************************************************************

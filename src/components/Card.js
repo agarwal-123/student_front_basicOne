@@ -65,8 +65,6 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
       }
 }));
 
-// export const BlogCardDemo = React.memo(function BlogCard() {
-
 function BlogCardDemo(props){
       
       const styles = useStyles();

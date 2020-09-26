@@ -63,22 +63,9 @@ function TestComponent(){
       
       const history=useHistory();
             
-      const displaysubject=SUBJECTS.map((subject)=>{
-            return (
-                  
-                  <Link className="link" to={`/test/${subject.name}`}>
-                  <div className="t-subject" style={{backgroundColor:subject.col}}> 
-                        <h3>{subject.name.toUpperCase()}</h3>
-                  </div>
-                  </Link>
-                  
-            );
-      })
 
-      const handlesubmit=(e)=>{
-            const subject=e.target.name;
+      const handlesubmit=(subject)=>{
             history.push("/test/"+subject);
-
       };
       
       const styles = useStyles();

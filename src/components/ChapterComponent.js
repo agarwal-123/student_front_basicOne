@@ -11,14 +11,14 @@ function TopicCard(props){
 
       return (
 	
-	<div  class="mat-card-s box-shadow clearfix" >
+	<div  class="chap-topic-card chap-box-shadow clearfix">
 		
-		<div class="card-img-style-s">
+		<div class="chap-topic-card-img-box">
 			<img src="https://toppscholar-upload.s3.ap-southeast-1.amazonaws.com/content-package/7491303a-9de3-48e4-a8a1-41c873460896.jpg"/>
-			<div  class="title-text medium-18 line-height" >{props.details}</div>
+			<div  class="chap-topic-card-title medium-18 line-height" >{props.details}</div>
 		</div>
 		
-		<div class="img-box-s">      
+		<div class="chap-topic-card-content-box">      
 			<li>12 Concepts</li>
 			<li>23 Videos</li>
 			<li>0% Learnt</li>
@@ -35,22 +35,22 @@ function SubTopicCard(props){
 
 	<Link className="link" to={`/chapter/${props.chapter}/${props.details}`}>
 	
-	<div  class="mat-card box-shadow" >
+	<div  class="chap-subject-card chap-box-shadow" >
 		
-		<div class="card-img-style">
+		<div class="chap-subject-card-img-box">
 			<img src="https://toppscholar-upload.s3.ap-southeast-1.amazonaws.com/content-package/7491303a-9de3-48e4-a8a1-41c873460896.jpg"/>
 		</div>
 		
-		<div class="img-box">
-			<div  class="title-text medium-18 line-height" >{props.details}</div>	
+		<div class="chap-subject-card-content-box">
+			<div  class="chap-subject-card-title medium-18 line-height" >{props.details}</div>	
 			
-			<div class="color-green ">
-				<li  class="list-style">12 Concepts</li>
+			<div class="chap-subject-card-content-first">
+				<li  class="chap-subject-card-list-style">12 Concepts</li>
 				<li >23 Videos</li>
 			</div>
 			
-			<div  class="list-container">
-				<li  class="list-style">{props.details.learn}% Learnt</li>
+			<div  class="chap-subject-card-content-second">
+				<li  class="chap-subject-card-list-style">{props.details.learn}% Learnt</li>
 				<li  class="">{props.details.practice}% Practiced</li>
 			</div>
 		</div>
@@ -123,13 +123,13 @@ class Chapter extends Component{
 
 		else{	
             return(
-                  <div className="comp clearfix">
+                  <div className="chap-component-container clearfix">
                         
-				<div class="card-container">
+				<div class="chap-topic-card-container">
                               {topics}
                         </div>
 				
-				<div class="card-container-big"> 
+				<div class="chap-subject-card-container"> 
 				{	
 					(() => {
 						if (this.state.isTopicsLoading) {
@@ -147,7 +147,7 @@ class Chapter extends Component{
 								})
 							);
 						}
-					  })()
+					})()
 
 				}
 				

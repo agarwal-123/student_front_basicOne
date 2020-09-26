@@ -1,8 +1,12 @@
 import React , { Component, useState } from 'react';
 import { Switch, Route, Redirect, NavLink, Link, useHistory} from 'react-router-dom';
 
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+
 import './CSS/Main.css'
 import {SUBJECTS,PHYSICS} from '../shared/subjects';
+import {baseurl2} from '../shared/baseurl';
 import Chapter from './ChapterComponent';
 import Videoplayer from './VideoplayerComponent';
 import Query from './queryComponent';
@@ -11,14 +15,8 @@ import Profile from './ProfileComponent';
 import Test from './TestComponent';
 import Testform from './Testform';
 
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 
-import home from './SVG/home3.svg';
-import books from './SVG/books.svg';
-import users from './SVG/users.svg';
-import note from './SVG/bell.svg';
-import contact from './SVG/address-book.svg';
+
 
 function Navbar(props){
       
@@ -34,19 +32,19 @@ function Navbar(props){
       };
 
       return (
-      <div className="navbar">
-            <div className="HeadPart">
+      <div className="main-navbar-container">
+            <div className="main-navbar-inner-container">
                   
-                  <div className="app-description">
-                        <div className="app-logo"><img className="header-main-logo"  src='./assets/logo-main3.jfif'/></div>
-                        <div className="sep">|</div>
-                        <div className="page-name">PROFILE PAGE</div>
+                  <div className="main-navbar-content">
+                        <div className="main-app-logo"><img src={baseurl2+'assets/logo-main3.jfif'}/></div>
+                        <div className="main-sep">|</div>
+                        <div className="main-page-name">PROFILE PAGE</div>
                   </div>
                   
-                  <div className="buttons">
+                  <div className="main-menu-buttons">
                         
                         <div>
-                              <a className="b1" href="#" onClick={handleClick}>My Profile</a>
+                              <a className="main-menu-title" href="#" onClick={handleClick}>My Profile</a>
                         </div>
                         
                         <Menu
@@ -73,18 +71,18 @@ function Navbar(props){
 
 function Sidebar(){
       return (
-            <div className="m-sidebar">
-                  <NavLink className="nav-link btt1 wrap"  to='/subject'>
-                        <img className="svg-image" src = "./assets/undraw_online2.svg" />
+            <div className="main-sidebar">
+                  <NavLink className="nav-link main-sidebar-svg-image-container"  to='/subject'>
+                        <img className="main-svg-image" src = {baseurl2+"assets/undraw_online2.svg"} />
                   </NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/test'> 
-                  <img className="svg-image" src = "./assets/undraw_speech.svg" />
+                  <NavLink className="nav-link main-sidebar-svg-image-container"  to='/test'> 
+                  <img className="main-svg-image" src = {baseurl2+"assets/undraw_speech.svg"} />
                   </NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/query'>
-                        <img className="svg-image" src = "./assets/undraw_chat.svg" />
+                  <NavLink className="nav-link main-sidebar-svg-image-container"  to='/query'>
+                        <img className="main-svg-image" src = {baseurl2+"assets/undraw_chat.svg"} />
                   </NavLink>
-                  <NavLink className="nav-link btt1 wrap"  to='/profile'>
-                        <img className="svg-image" src = "./assets/undraw_profile.svg" />
+                  <NavLink className="nav-link main-sidebar-svg-image-container"  to='/profile'>
+                        <img className="main-svg-image" src = {baseurl2+"assets/undraw_profile.svg"} />
                   </NavLink>
             </div>
       );
@@ -92,40 +90,13 @@ function Sidebar(){
 
 function Subject(){
 
-      const subjects=SUBJECTS.map((subject)=>{
-            return(
-                  <Link className="link" to={`/subject/${subject.name}`}>
-                        <div className="subject main-col3" id={subject.id} key={subject.id}>
-                              <h3>{subject.name}</h3>
-                        </div>
-                  </Link>
-            );
-      });
-     
-      const physics=PHYSICS.map((chapter)=>{
-            
-            if(chapter.name.length>25)
-                  chapter.name=chapter.name.substring(0,22)+"...";
-            
-            return(
-                  <div className="chapter main-col4">
-                        <img src="./assets/book3.jpg"></img>
-                        <h3>{chapter.name}</h3> 
-                        <div className="newrow clearfix">
-                              <h4>{chapter.learn}%{" "}Learnt</h4>
-                              <h4>{chapter.practice}%{" "}Practiced</h4>
-                        </div>
-                  </div>
-            );
-      });
-
       var left=5;
 
       const slideleft=()=>{       
             if(left>-340){
                   left-=50;
                   var tmp=left+'%';
-                  document.getElementsByClassName('chapters')[0].style.marginLeft=tmp;
+                  document.getElementsByClassName('sub-chapter-inner-container')[0].style.marginLeft=tmp;
             }  
       };
 
@@ -133,32 +104,62 @@ function Subject(){
             if(left<5){
                   left+=50;
                   let tmp=left+'%';
-                  document.getElementsByClassName('chapters')[0].style.marginLeft=tmp;
+                  document.getElementsByClassName('sub-chapter-inner-container')[0].style.marginLeft=tmp;
             }       
       };
       
 
       return(
-            <div className="comp">  
+            <div className="sub-component-container">  
 
-                  <div className="header-img clearfix">     
+                  <div className="sub-header-img-container clearfix">     
                   
-                  <img className="header-img1" src="./assets/undraw_professor.svg"></img>
-                  <img className="header-img2" src="./assets/undraw_board.svg"></img>
+                  <img className="sub-header-img-first" src="./assets/undraw_professor.svg"></img>
+                  <img className="sub-header-img-second" src="./assets/undraw_board.svg"></img>
                   
                   </div>
                   <h1>Explore by subjects</h1>
                   
-                  <div className="row1 clearfix">
-                        {subjects}
+                  <div className="sub-subject-container clearfix">
+
+                  {
+                        SUBJECTS.map((subject)=>{
+                              return(
+                                    <Link className="link" to={`/subject/${subject.name}`}>
+                                          <div className="sub-subject" id={subject.id} key={subject.id}>
+                                                <h3>{subject.name}</h3>
+                                          </div>
+                                    </Link>
+                              );
+                        })
+                  }
+
                   </div>
                   
-                  <div className="row2">
-                        <div className="chapters clearfix">
-                              {physics}
+                  <div className="sub-chapter-container">
+
+                        <div className="sub-chapter-inner-container clearfix">
+                        {
+                              PHYSICS.map((chapter)=>{
+                                    if(chapter.name.length>25)
+                                          chapter.name=chapter.name.substring(0,22)+"...";
+                                    
+                                    return(
+                                          <div className="sub-chapter">
+                                                <img src="./assets/book3.jpg"></img>
+                                                <h3>{chapter.name}</h3> 
+                                                <div className="sub-chapter-content clearfix">
+                                                      <h4>{chapter.learn}%{" "}Learnt</h4>
+                                                      <h4>{chapter.practice}%{" "}Practiced</h4>
+                                                </div>
+                                          </div>
+                                    );
+                              })
+                        }
+
                         </div>
-                        <button className="first-button"  onClick={slideleft}><img src="./assets/garrow1.png"></img></button> 
-                        <button className="second-button" onClick={slideright}><img src="./assets/garrow.png"></img></button>
+                        <button className="sub-left-slider"  onClick={slideleft}><img src="./assets/garrow1.png"></img></button> 
+                        <button className="sub-right-slider" onClick={slideright}><img src="./assets/garrow.png"></img></button>
                   </div>
                  
             </div>
@@ -183,7 +184,6 @@ class Main extends Component{
       render(){
 
             const selectchapter=({match})=>{
-                  console.log("hello 1");
                   return(
                         <Chapter subname={match.params.subname}/>
                   );
@@ -198,11 +198,11 @@ class Main extends Component{
 
             return(
 
-            <div className="main">
+            <div className="main-full-page-container">
                   <Navbar changestate={this.props.changestate} changeHome={this.props.changeHome}/>
                   <div className="main-container clearfix">
                         <Sidebar/>
-                        <div className="side-container">
+                        <div className="main-component-container">
                               <Switch>
                                     <Route exact path='/subject' component={()=><Subject/>} />
                                     <Route path='/subject/:subname' component={selectchapter} />

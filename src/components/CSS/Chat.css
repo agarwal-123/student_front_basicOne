@@ -2,7 +2,7 @@
       box-sizing: border-box;
 }
   
-.chat-page {
+.chat-page{
       display: flex;
       height: 91vh;
 }
