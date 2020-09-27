@@ -1,4 +1,4 @@
-import React , { Component, useState } from 'react';
+import React , { Component, useState, useEffect, useMemo } from 'react';
 import { Switch, Route, Redirect, NavLink, Link, useHistory} from 'react-router-dom';
 
 import Menu from '@material-ui/core/Menu';
@@ -38,7 +38,7 @@ function Navbar(props){
                   <div className="main-navbar-content">
                         <div className="main-app-logo"><img src={baseurl2+'assets/logo-main3.jfif'}/></div>
                         <div className="main-sep">|</div>
-                        <div className="main-page-name">PROFILE PAGE</div>
+                        <div className="main-page-name">{props.title}</div>
                   </div>
                   
                   <div className="main-menu-buttons">
@@ -60,7 +60,7 @@ function Navbar(props){
                               onClose={handleClose}
                         >
                               <MenuItem onClick={()=>{ handleClose(); history.push("./Profile"); }}>My Profile</MenuItem>
-                              <MenuItem onClick={()=>{ handleClose(); localStorage.removeItem('token'); props.changestate(false);}}>Logout</MenuItem>
+                              <MenuItem onClick={()=>{ handleClose(); localStorage.removeItem('token'); props.changestate(false); props.changeHome(true);}}>Logout</MenuItem>
                         </Menu>
                   
                   </div>
@@ -69,26 +69,30 @@ function Navbar(props){
       );
 }
 
-function Sidebar(){
+function Sidebar(props){
       return (
             <div className="main-sidebar">
-                  <NavLink className="nav-link main-sidebar-svg-image-container"  to='/subject'>
+                  <NavLink onClick={()=>{props.setNavbarTitle("Subject")}} className="nav-link main-sidebar-svg-image-container"  to='/subject'>
                         <img className="main-svg-image" src = {baseurl2+"assets/undraw_online2.svg"} />
+                        <div className="main-svg-image-text">Subject</div>
                   </NavLink>
-                  <NavLink className="nav-link main-sidebar-svg-image-container"  to='/test'> 
-                  <img className="main-svg-image" src = {baseurl2+"assets/undraw_speech.svg"} />
+                  <NavLink onClick={()=>{props.setNavbarTitle("Mock Test")}} className="nav-link main-sidebar-svg-image-container"  to='/test'> 
+                        <img className="main-svg-image" src = {baseurl2+"assets/undraw_speech.svg"} />
+                        <div className="main-svg-image-text">Mock Test</div>
                   </NavLink>
-                  <NavLink className="nav-link main-sidebar-svg-image-container"  to='/query'>
+                  <NavLink onClick={()=>{props.setNavbarTitle("Chat")}} className="nav-link main-sidebar-svg-image-container"  to='/query'>
                         <img className="main-svg-image" src = {baseurl2+"assets/undraw_chat.svg"} />
+                        <div className="main-svg-image-text">Chat</div>
                   </NavLink>
-                  <NavLink className="nav-link main-sidebar-svg-image-container"  to='/profile'>
+                  <NavLink onClick={()=>{props.setNavbarTitle("Profile")}} className="nav-link main-sidebar-svg-image-container"  to='/profile'>
                         <img className="main-svg-image" src = {baseurl2+"assets/undraw_profile.svg"} />
+                        <div className="main-svg-image-text">Profile</div>
                   </NavLink>
             </div>
       );
 }
 
-function Subject(){
+function Subject(props){
 
       var left=5;
 
@@ -120,14 +124,14 @@ function Subject(){
                   </div>
                   <h1>Explore by subjects</h1>
                   
-                  <div className="sub-subject-container clearfix">
+                  <div className="sub-subject-container">
 
                   {
                         SUBJECTS.map((subject)=>{
                               return(
-                                    <Link className="link" to={`/subject/${subject.name}`}>
+                                    <Link className="sub-subject-link" to={`/subject/${subject.name}`}>
                                           <div className="sub-subject" id={subject.id} key={subject.id}>
-                                                <h3>{subject.name}</h3>
+                                          <h3>{subject.name}</h3>
                                           </div>
                                     </Link>
                               );
@@ -146,7 +150,7 @@ function Subject(){
                                     
                                     return(
                                           <div className="sub-chapter">
-                                                <img src="./assets/book3.jpg"></img>
+                                                <img src="./assets/sub.jpg"></img>
                                                 <h3>{chapter.name}</h3> 
                                                 <div className="sub-chapter-content clearfix">
                                                       <h4>{chapter.learn}%{" "}Learnt</h4>
@@ -156,8 +160,8 @@ function Subject(){
                                     );
                               })
                         }
-
                         </div>
+
                         <button className="sub-left-slider"  onClick={slideleft}><img src="./assets/garrow1.png"></img></button> 
                         <button className="sub-right-slider" onClick={slideright}><img src="./assets/garrow.png"></img></button>
                   </div>
@@ -172,18 +176,26 @@ class Main extends Component{
       constructor(props) {
             super(props);
             this.state = {
-                  roomID: ""
+                  roomID: "",
+                  title:"Subject"
             };
             this.changeRoomID = this.changeRoomID.bind(this);
+            this.setNavbarTitle= this.setNavbarTitle.bind(this);
       }
       
       changeRoomID(id) {
             this.setState({ roomID: id},()=>console.log("aayaa",this.state.roomID))
       }
+
+      setNavbarTitle(title){
+            this.setState({title:title});
+      }
+
       
       render(){
 
             const selectchapter=({match})=>{
+                
                   return(
                         <Chapter subname={match.params.subname}/>
                   );
@@ -199,9 +211,9 @@ class Main extends Component{
             return(
 
             <div className="main-full-page-container">
-                  <Navbar changestate={this.props.changestate} changeHome={this.props.changeHome}/>
+                  <Navbar title={this.state.title} changestate={this.props.changestate} changeHome={this.props.changeHome}/>
                   <div className="main-container clearfix">
-                        <Sidebar/>
+                        <Sidebar setNavbarTitle={this.setNavbarTitle}/>
                         <div className="main-component-container">
                               <Switch>
                                     <Route exact path='/subject' component={()=><Subject/>} />
@@ -209,7 +221,7 @@ class Main extends Component{
                                     <Route path='/chapter/:chapter/:topic' component={selecttopic} />
                                     <Route exact path='/test' component={()=><Test/>}/>
                                     <Route path='/chat' component={()=><Client Room={this.state.roomID}/>}/>
-                                    <Route path="/query" component={() => <Query changeRoomID={this.changeRoomID} />} />
+                                    <Route path="/query" component={() => <Query changeRoomID={this.changeRoomID}/>} />
                                     <Route path='/Profile' component={()=><Profile/>}/>
                                     <Route path='/test/:subname' component={()=><Testform/>}/>
                                     <Redirect to="/subject"/>

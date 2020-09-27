@@ -140,11 +140,6 @@
 }
 
 
-
-/* .h-story__text p{
-      margin-top: 1%;
-} */
-
 .h-story__img {
       height: 100%;
       transform: translateX(0rem) scale(1.4);
@@ -190,8 +185,6 @@
 }
 
 .linkedin-text{
-      /* position: relative; */
-      /* margin-top:-20px; */
       margin-top: 10px;
       margin-left: 20px;
       margin-right:80px;

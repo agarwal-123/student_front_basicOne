@@ -114,78 +114,145 @@ export default function HomeComponent(props) {
                   <div className="h-row">
                   <div className="h-story">
                         <figure className="h-story__shape">
-                              <img
-                                    src="./assets/avt2.png"
-                                    alt="Person on a tour"
-                                    className="h-story__img"
-                              />
+                              <img src="./assets/avt2.png" alt="Person on a tour" className="h-story__img"/>
                               <figcaption className="h-story__caption">
-                                    Mary Smith
+                                    Siddhant Gandhi
                               </figcaption>
                         </figure>
                         <div className="h-story__text">
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                              Dig deeper,then go ahead and fix it.   </h3>
+                                    If you have a complex solution, then there is
+                                    something wrong with the approach :D
+                              </h3>
                               <div className="clearfix personal-info">
-                              <img src='./assets/linkedin.svg' className="linkedin"/>
-                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              
+                              <img src="./assets/linkedin.svg" className="linkedin"/>
 
-                              <img src='./assets/github-logo.svg' className="linkedin"/>
-                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                              <div className="linkedin-text">
+                                    {" "}
+                                    <a href="https://www.linkedin.com/in/sgbtech96/" target="_blank">
+                                    Siddhant Gandhi
+                                    </a>
                               </div>
-                              <br/>
+
+                              <img
+                                    src="./assets/github-logo.svg"
+                                    className="linkedin"
+                              />
+                              <div className="linkedin-text">
+                                    {" "}
+                                    <a href="https://github.com/sgbtech96" target="_blank">
+                                    Siddhant Gandhi
+                                    </a>
+                              </div>
+
+                              </div>
+                              
+                              <br />
+                              
                               <div>
+                              
                               <p>
                               <ul>
-                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
-                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
-                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
+                                    <li>
+                                          I'm keen to develop products that
+                                          could be deployed for public use.
+                                    </li>
+                                    <li>
+                                          I've been working on the MERN tech
+                                          stack, and React Native to build
+                                          cross-platform applications for a
+                                          year.
+                                    </li>
+                                    <li>
+                                          A freak at brainstorming algorithmic
+                                          programming problems.
+                                          <img src="./assets/codechef.svg" className="chef"/>
+                                          {" "}
+                                          <a href="https://www.codechef.com/users/sgbtech96" target="_blank">
+                                          sgbtech96
+                                          </a>
+                                    </li>
                               </ul>
                               </p>
-                              </div>
+
+                        </div>
                         </div>
                   </div>
                   </div>
 
                   <div className="h-row">
-                  <div className="h-story">
-                        <figure className="h-story__shape">
-                              <img
-                                    src="./assets/avt2.png"
-                                    alt="Person on a tour"
-                                    className="h-story__img"
-                              />
-                              <figcaption className="h-story__caption">
-                                    Mary Smith
-                              </figcaption>
-                        </figure>
-                        <div className="h-story__text">
+                        <div className="h-story">
+                              <figure className="h-story__shape">
+                                    <img src="./assets/avt2.png" alt="Person on a tour" className="h-story__img"/>
+                                    <figcaption className="h-story__caption">
+                                          Raghav Bansal
+                                    </figcaption>
+                              </figure>
+                              <div className="h-story__text">
+                              
                               <h3 className="h-heading-tertiary h-u-margin-bottom-small">
-                              In order to understand recursion, one must first understand recursion. </h3>
+                                    In order to understand recursion, one must first
+                                    understand recursion.{" "}
+                              </h3>
+                              
                               <div className="clearfix personal-info">
-                              <img src='./assets/linkedin.svg' className="linkedin"/>
-                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                                    <img src="./assets/linkedin.svg" className="linkedin"/>
+                                    <div className="linkedin-text">
+                                          {" "}
+                                          <a href="https://www.linkedin.com/in/raghav-bansal-b10862154/" target="_blank">
+                                          Raghav Bansal
+                                          </a>
+                                    </div>
 
-                              <img src='./assets/github-logo.svg' className="linkedin"/>
-                              <div className="linkedin-text"> <a href="https://www.linkedin.com" target="_blank">Dhruva Agarwal</a></div> 
+                                    <img src="./assets/github-logo.svg" className="linkedin"/>
+                                    <div className="linkedin-text">
+                                          {" "}
+                                          <a href="https://github.com/bansalraghav19" target="_blank">
+                                          Raghav Bansal
+                                          </a>
+                                    </div>
                               </div>
-                              <br/>
+                              <br />
                               <div>
-                              <p>
-                              <ul>
-                                    <li>About 1 year experience of Javascript Frameworks, like React and Nodejs.</li>
-                                    <li>Love to solve complex algorithmic problems. Codechef profile: <a>dhruv331</a></li>
-                                    <li>Curruntly exploring React-Native for a better understanding of mobile applications.</li>
-                              </ul>
-                              </p>
+                                    <p>
+                                          <ul>
+                                          <li>
+                                                About 1 year experience of
+                                                Javascript Frameworks, like React
+                                                and Nodejs.
+                                          </li>
+                                          <li>
+                                                I am also in love with competitive
+                                                coding.{" "}
+                                                <img
+                                                      src="./assets/codeforces.svg"
+                                                      className="forces"
+                                                />{" "}
+                                                <a href="https://codeforces.com/profile/bansalraghav_19">
+                                                      bansalraghav_19
+                                                </a>
+                                                <img
+                                                      src="./assets/codechef.svg"
+                                                      className="chef"
+                                                />{" "}
+                                                <a href="https://www.codechef.com/users/bansalraghav19">
+                                                      bansalraghav19
+                                                </a>
+                                          </li>
+                                          <li>
+                                                Curruntly exploring React-Native for
+                                                a better understanding of mobile
+                                                applications.
+                                          </li>
+                                          </ul>
+                                    </p>
+                              </div>
                               </div>
                         </div>
                   </div>
-                  </div>
 
-
-                  </div>
-                  
+                  </div>   
             </div>
       );
 }

@@ -65,7 +65,7 @@ class Multiplepage extends Component{
             }  
             else if(this.state.isVerified){
                   return(      
-                        <Main changestate = {this.changestate}/>
+                        <Main changestate = {this.changestate} changeHome={this.changeHome}/>
                   );
             }      
             else if(this.state.isHome){

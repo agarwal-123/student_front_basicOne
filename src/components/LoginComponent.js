@@ -83,7 +83,7 @@ function Register({input,changestate,contactnumber}){
 }
 
 
-function SignIn({input,changestate,changeLoading}){
+function SignIn({input,changestate,changeHome,changeLoading}){
 	
 	const history=useHistory();
 
@@ -115,7 +115,9 @@ function SignIn({input,changestate,changeLoading}){
 			<input type="password" id="login-password" ref={(input)=>myinput.pass=input} placeholder="Enter Password" required/>
 			<input type="submit" id="login-submit" placeholder="Login" value="Login" required/>
 			<div className="login-text"> Not Connected Yet ?</div>
-			<NavLink className="nav-link login-nav-link"  to='/signup'>Create Account Now !</NavLink>
+			<NavLink  className="nav-link login-nav-link"  to='/signup'>Create Account Now !</NavLink>
+			{/* <NavLink onClick={()=>{changeHome(true);}} className="nav-link login-nav-link" to='#'>Return back to home !</NavLink> */}
+			
 		</form>     
 	);
 }
@@ -175,8 +177,8 @@ class Login extends Component{
 			<div className="login-second-col">
 				<h1><span>Quick</span> Study</h1>
 				<Switch>
-					<Route path='/signin' component={()=><SignIn input={this.input} changestate={this.props.changestate} changeLoading={this.props.changeLoading}/>} />
-					<Route path='/signup' component={()=><SignUp input={this.input} assignnumber={this.assignnumber}/>}/>
+					<Route path='/signin' component={()=><SignIn input={this.input} changestate={this.props.changestate} changeHome={this.props.changeHome} changeLoading={this.props.changeLoading}/>} />
+					<Route path='/signup' component={()=><SignUp input={this.input} assignnumber={this.assignnumber} changeHome={this.props.changeHome}/>}/>
 					<Route path='/verifyotp' component={()=><Votp input={this.input} contactnumber={this.state.contactnumber} assignnumber={this.assignnumber}/>}/>
 					<Route path='/register' component={()=><Register input={this.input} changestate={this.props.changestate} contactnumber={this.state.contactnumber}/>}/>
 					<Redirect to="/signin"/>
