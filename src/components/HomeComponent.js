@@ -8,76 +8,76 @@ export default function HomeComponent(props) {
       return (
 	      <div>
 	      <head>
-	          <meta property="og:site_name" content="YouTube">
-      <meta property="og:url" content="https://www.youtube.com/watch?v=vo0Mo0jr7dM">
-    <meta property="og:title" content="IntelliJ - Java Development on Apple MacBook Pro 13&quot; M1 in 4K">
-    <meta property="og:image" content="https://i.ytimg.com/vi/vo0Mo0jr7dM/maxresdefault.jpg">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="720">
+	          <meta property="og:site_name" content="YouTube"/>
+      <meta property="og:url" content="https://www.youtube.com/watch?v=vo0Mo0jr7dM"/>
+    <meta property="og:title" content="IntelliJ - Java Development on Apple MacBook Pro 13&quot; M1 in 4K"/>
+    <meta property="og:image" content="https://i.ytimg.com/vi/vo0Mo0jr7dM/maxresdefault.jpg"/>
+    <meta property="og:image:width" content="1280"/>
+    <meta property="og:image:height" content="720"/>
 
-      <meta property="og:description" content="Many of you folks requested how JetBrains IntelliJ and Java Development is running on the new Apple Silicon chips, and I am happy to report that everything i...">
+      <meta property="og:description" content="Many of you folks requested how JetBrains IntelliJ and Java Development is running on the new Apple Silicon chips, and I am happy to report that everything i..."/>
 
-    <meta property="al:ios:app_store_id" content="544007664">
-    <meta property="al:ios:app_name" content="YouTube">
-      <meta property="al:ios:url" content="vnd.youtube://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks">
+    <meta property="al:ios:app_store_id" content="544007664"/>
+    <meta property="al:ios:app_name" content="YouTube"/>
+      <meta property="al:ios:url" content="vnd.youtube://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks"/>
 
-      <meta property="al:android:url" content="vnd.youtube://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks">
-    <meta property="al:android:app_name" content="YouTube">
-    <meta property="al:android:package" content="com.google.android.youtube">
-    <meta property="al:web:url" content="https://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks">
+      <meta property="al:android:url" content="vnd.youtube://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks"/>
+    <meta property="al:android:app_name" content="YouTube"/>
+    <meta property="al:android:package" content="com.google.android.youtube"/>
+    <meta property="al:web:url" content="https://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks"/>
 
-    <meta property="og:type" content="video.other">
-      <meta property="og:video:url" content="https://www.youtube.com/embed/vo0Mo0jr7dM">
-      <meta property="og:video:secure_url" content="https://www.youtube.com/embed/vo0Mo0jr7dM">
-      <meta property="og:video:type" content="text/html">
-      <meta property="og:video:width" content="1280">
-      <meta property="og:video:height" content="720">
+    <meta property="og:type" content="video.other"/>
+      <meta property="og:video:url" content="https://www.youtube.com/embed/vo0Mo0jr7dM"/>
+      <meta property="og:video:secure_url" content="https://www.youtube.com/embed/vo0Mo0jr7dM"/>
+      <meta property="og:video:type" content="text/html"/>
+      <meta property="og:video:width" content="1280"/>
+      <meta property="og:video:height" content="720"/>
 
-        <meta property="og:video:tag" content="Apple M1">
-        <meta property="og:video:tag" content="Apple Silicon">
-        <meta property="og:video:tag" content="Apple M1 MacBook">
-        <meta property="og:video:tag" content="MacBook M1">
-        <meta property="og:video:tag" content="MacBook Pro M1">
-        <meta property="og:video:tag" content="MacBook Pro 13 Apple Silicon">
-        <meta property="og:video:tag" content="MacBook Air M1">
-        <meta property="og:video:tag" content="MacBook Pro Apple Silicon">
-        <meta property="og:video:tag" content="MacBook Pro 13 M1">
-        <meta property="og:video:tag" content="MacBook Late 2020 M1">
-        <meta property="og:video:tag" content="MacBook 2020 M1">
-        <meta property="og:video:tag" content="MacBook Apple Silicon 2020">
-        <meta property="og:video:tag" content="Apple m1 Hands on">
-        <meta property="og:video:tag" content="Progamming Apple M1">
-        <meta property="og:video:tag" content="Coding Apple Silicon">
-        <meta property="og:video:tag" content="Programming Apple Silicon">
-        <meta property="og:video:tag" content="Java Apple M1">
-        <meta property="og:video:tag" content="Java Apple Silicon">
-        <meta property="og:video:tag" content="IntelliJ M1">
-        <meta property="og:video:tag" content="IntelliJ Apple Silicon">
-        <meta property="og:video:tag" content="IntelliJ MacBook M1">
-        <meta property="og:video:tag" content="JetBrains MacBook M1">
-        <meta property="og:video:tag" content="JetBrains Apple Silicon">
-        <meta property="og:video:tag" content="Java JRE">
+        <meta property="og:video:tag" content="Apple M1"/>
+        <meta property="og:video:tag" content="Apple Silicon"/>
+        <meta property="og:video:tag" content="Apple M1 MacBook"/>
+        <meta property="og:video:tag" content="MacBook M1"/>
+        <meta property="og:video:tag" content="MacBook Pro M1"/>
+        <meta property="og:video:tag" content="MacBook Pro 13 Apple Silicon"/>
+        <meta property="og:video:tag" content="MacBook Air M1"/>
+        <meta property="og:video:tag" content="MacBook Pro Apple Silicon"/>
+        <meta property="og:video:tag" content="MacBook Pro 13 M1"/>
+        <meta property="og:video:tag" content="MacBook Late 2020 M1"/>
+        <meta property="og:video:tag" content="MacBook 2020 M1"/>
+        <meta property="og:video:tag" content="MacBook Apple Silicon 2020"/>
+        <meta property="og:video:tag" content="Apple m1 Hands on"/>
+        <meta property="og:video:tag" content="Progamming Apple M1"/>
+        <meta property="og:video:tag" content="Coding Apple Silicon"/>
+        <meta property="og:video:tag" content="Programming Apple Silicon"/>
+        <meta property="og:video:tag" content="Java Apple M1"/>
+        <meta property="og:video:tag" content="Java Apple Silicon"/>
+        <meta property="og:video:tag" content="IntelliJ M1"/>
+        <meta property="og:video:tag" content="IntelliJ Apple Silicon"/>
+        <meta property="og:video:tag" content="IntelliJ MacBook M1"/>
+        <meta property="og:video:tag" content="JetBrains MacBook M1"/>
+        <meta property="og:video:tag" content="JetBrains Apple Silicon"/>
+        <meta property="og:video:tag" content="Java JRE"/>
 
-    <meta property="fb:app_id" content="87741124305">
+    <meta property="fb:app_id" content="87741124305"/>
 
-      <meta name="twitter:card" content="player">
-    <meta name="twitter:site" content="@youtube">
-    <meta name="twitter:url" content="https://www.youtube.com/watch?v=vo0Mo0jr7dM">
-    <meta name="twitter:title" content="IntelliJ - Java Development on Apple MacBook Pro 13&quot; M1 in 4K">
-    <meta name="twitter:description" content="Many of you folks requested how JetBrains IntelliJ and Java Development is running on the new Apple Silicon chips, and I am happy to report that everything i...">
-    <meta name="twitter:image" content="https://i.ytimg.com/vi/vo0Mo0jr7dM/maxresdefault.jpg">
-    <meta name="twitter:app:name:iphone" content="YouTube">
-    <meta name="twitter:app:id:iphone" content="544007664">
-    <meta name="twitter:app:name:ipad" content="YouTube">
-    <meta name="twitter:app:id:ipad" content="544007664">
-      <meta name="twitter:app:url:iphone" content="vnd.youtube://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks">
-      <meta name="twitter:app:url:ipad" content="vnd.youtube://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks">
-    <meta name="twitter:app:name:googleplay" content="YouTube">
-    <meta name="twitter:app:id:googleplay" content="com.google.android.youtube">
-    <meta name="twitter:app:url:googleplay" content="https://www.youtube.com/watch?v=vo0Mo0jr7dM">
-      <meta name="twitter:player" content="https://www.youtube.com/embed/vo0Mo0jr7dM">
-      <meta name="twitter:player:width" content="1280">
-      <meta name="twitter:player:height" content="720">
+      <meta name="twitter:card" content="player"/>
+    <meta name="twitter:site" content="@youtube"/>
+    <meta name="twitter:url" content="https://www.youtube.com/watch?v=vo0Mo0jr7dM"/>
+    <meta name="twitter:title" content="IntelliJ - Java Development on Apple MacBook Pro 13&quot; M1 in 4K"/>
+    <meta name="twitter:description" content="Many of you folks requested how JetBrains IntelliJ and Java Development is running on the new Apple Silicon chips, and I am happy to report that everything i..."/>
+    <meta name="twitter:image" content="https://i.ytimg.com/vi/vo0Mo0jr7dM/maxresdefault.jpg"/>
+    <meta name="twitter:app:name:iphone" content="YouTube"/>
+    <meta name="twitter:app:id:iphone" content="544007664"/>
+    <meta name="twitter:app:name:ipad" content="YouTube"/>
+    <meta name="twitter:app:id:ipad" content="544007664"/>
+      <meta name="twitter:app:url:iphone" content="vnd.youtube://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks"/>
+      <meta name="twitter:app:url:ipad" content="vnd.youtube://www.youtube.com/watch?v=vo0Mo0jr7dM&amp;feature=applinks"/>
+    <meta name="twitter:app:name:googleplay" content="YouTube"/>
+    <meta name="twitter:app:id:googleplay" content="com.google.android.youtube"/>
+    <meta name="twitter:app:url:googleplay" content="https://www.youtube.com/watch?v=vo0Mo0jr7dM"/>
+      <meta name="twitter:player" content="https://www.youtube.com/embed/vo0Mo0jr7dM"/>
+      <meta name="twitter:player:width" content="1280"/>
+      <meta name="twitter:player:height" content="720"/>
 
 
     
