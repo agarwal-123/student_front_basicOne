@@ -13,3 +13,6 @@
 
 git remote set-url origin https://github.com/raushan303/student
 git remote -v
+
+git config --global user.name "Raushan kumar"
+git config --global user.email "raushan@neo91.com"
